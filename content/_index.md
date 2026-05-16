@@ -179,26 +179,23 @@ sections:
     design:
       columns: '1'
 
-  - block: contact
+  - block: markdown
     id: contact
     content:
-      title: Contact
-      email: deveshchandrabinwal@gmail.com
-      phone: '+91-7409668004'
-      address:
-        street: New Chemistry Unit, JNCASR
-        city: Bangalore
-        country: India
-        country_code: IN
-      contact_links:
-        - icon: brands/linkedin
-          icon_pack: fab
-          name: LinkedIn
-          link: https://www.linkedin.com/in/devesh-binwal/
-        - icon: brands/orcid
-          icon_pack: fab
-          name: ORCID
-          link: https://orcid.org/0000-0002-5418-8577
+      title: 'Contact'
+      subtitle: ''
+      text: |-
+        <p style="text-align:justify;">
+          <strong>Email:</strong> <a href="mailto:deveshchandrabinwal@gmail.com">deveshchandrabinwal@gmail.com</a><br>
+          <strong>Phone:</strong> +91-7409668004<br>
+          <strong>Address:</strong> New Chemistry Unit, JNCASR, Bangalore, India
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/devesh-binwal/" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
+          <a href="https://orcid.org/0000-0002-5418-8577" target="_blank">ORCID</a> &nbsp;|&nbsp;
+          <a href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" target="_blank">Google Scholar</a> &nbsp;|&nbsp;
+          <a href="https://www.researchgate.net/profile/Devesh-Chandra-Binwal" target="_blank">ResearchGate</a>
+        </p>
     design:
       columns: '1'
 ---
