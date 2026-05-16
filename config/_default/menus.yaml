@@ -1,19 +1,22 @@
 main:
-  - name: Bio
+  - name: Home
     url: /
     weight: 10
   - name: Research Publications
-    url: /#papers
+    url: /publications/
     weight: 20
   - name: Research Areas
-    url: /#research-areas
+    url: /research-areas/
     weight: 30
   - name: Awards & Recognition
-    url: /#awards
+    url: /awards/
     weight: 40
-  - name: Education
-    url: experience/
+  - name: Gallery
+    url: /gallery/
     weight: 50
-  - name: Contact
-    url: /#contact
+  - name: Education
+    url: /experience/
     weight: 60
+  - name: Contact
+    url: /contact/
+    weight: 70

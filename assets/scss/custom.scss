@@ -1,14 +1,28 @@
+// ── Full-width content container ──────────────────────────────────────────
+// Override the narrow center column used by HugoBlox landing pages
+.page-body .container,
+.page-body .container-fluid,
+.section-container,
+article.article-container,
+.col-lg-8,
+.col-md-10 {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
 // ── Publication author list: no underline on any author link ──────────────
 .pub-authors a {
   text-decoration: none;
 }
 
-// ── Highlight D.C. Binwal: bold + distinct colour, no underline ───────────
+// ── Highlight D.C. Binwal: bold + blue, no underline ─────────────────────
 .pub-authors a[href*="devesh"],
 .pub-authors a[href*="binwal"],
 .pub-authors .author-highlight {
   font-weight: 700;
-  color: #1565c0;        // accessible dark-blue highlight
+  color: #1565c0;
   text-decoration: none;
 }
 
@@ -21,12 +35,7 @@ li {
   text-align: justify;
 }
 
-// ── Publication list: show all items, no "Show more" / pagination ─────────
-.pub-list-item {
-  page-break-inside: avoid;
-}
-
-// ── Research areas: side-by-side cards fill the row ──────────────────────
+// ── Research areas: 2×2 grid fills row ───────────────────────────────────
 .universal-card-view .row {
   display: flex;
   flex-wrap: wrap;
