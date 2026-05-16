@@ -13,19 +13,18 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Your Name"
+    name: "Dr. Devesh Chandra Binwal"
     # Legal entity for copyright notices (defaults to name if not set)
-    organization: ""
+    organization: "JNCASR, Bangalore, India"
     # Schema.org type for structured data
     type: person # person | organization | local_business
     # Short tagline displayed on your site
-    tagline: ""
+    tagline: "Research Associate, New Chemistry Unit, JNCASR | Crystallography & Materials Science"
     # Site meta description for search engines and social sharing
-    description: "The highly-customizable Hugo Academic theme powered by HugoBlox
-      Kit. Easily create your personal academic website."
+    description: "Academic website of Dr. Devesh Chandra Binwal, Research Associate at JNCASR Bangalore. Specializing in halide double perovskites, single-crystal X-ray diffraction, and transition metal dichalcogenides."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: "GoOwnable" # Twitter/X handle for Twitter Cards (without @)
+      twitter: "" # Twitter/X handle for Twitter Cards (without @)
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -272,7 +271,7 @@ hugoblox:
     hud:
       position: bottom-left # top-left | top-right | bottom-left | bottom-right
       opacity: 1.0
-    export_logs: true
+      export_logs: true
 
   # ────────────────────────────────────────────────────────────────────────────
   # PREMIUM
