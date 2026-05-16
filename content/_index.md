@@ -43,26 +43,42 @@ sections:
         size: medium
         shape: circle
 
-  - block: collection
-    id: papers
+  - block: markdown
     content:
-      title: Featured Publications
+      title: 'Awards & Recognition'
+      subtitle: ''
+      text: |-
+        - **2021** — Sheikh Saqr Junior Fellowship, JNCASR (Highly selective; only 2 awards per year nationally, 2021–2023)
+        - **2021** — DST-INSPIRE Fellowship, Department of Science & Technology, Govt. of India
+        - **2024** — SERB International Travel Support, Govt. of India (Gordon Research Conference on Unconventional Semiconductors, USA)
+        - **2023** — RAK CAM Travel Grant, Ras Al Khaimah Center for Advanced Materials, UAE (International Workshop on Advanced Materials, UAE)
+        - **2025** — Fellowship for Visiting PhD Research Program, University of Newcastle, Australia
+        - **2019** — GATE Fellowship, MHRD (national-level competitive examination)
+        - **2013** — DST-INSPIRE Scholarship, Govt. of India (Awarded to top 1% of Class XII students nationally, 2013–2018)
+    design:
+      columns: '1'
+
+  - block: collection
+    id: research-areas
+    content:
+      title: Research Areas
       filters:
         folders:
-          - publications
-        featured_only: true
+          - research-areas
     design:
-      view: article-grid
+      view: card
       columns: 2
 
   - block: collection
+    id: papers
     content:
-      title: Recent Publications
-      text: ''
+      title: Research Publications
       filters:
         folders:
           - publications
         exclude_featured: false
+      params:
+        show_abstract: false
     design:
       view: citation
 
@@ -75,6 +91,21 @@ sections:
           - events
     design:
       view: card
+
+  - block: markdown
+    content:
+      title: 'Gallery'
+      subtitle: ''
+      text: |-
+        {{< gallery >}}
+          {{< figure src="uploads/gallery-1.jpg" caption="With Prof. C.N.R. Rao, JNCASR" >}}
+          {{< figure src="uploads/gallery-2.jpg" caption="Poster presentation, GRC USA 2024" >}}
+          {{< figure src="uploads/gallery-3.jpg" caption="Oral talk, University of Newcastle 2025" >}}
+          {{< figure src="uploads/gallery-4.jpg" caption="Group photo, JNCASR–Rice University Workshop 2023" >}}
+          {{< figure src="uploads/gallery-5.jpg" caption="IWAM poster, UAE 2023" >}}
+        {{< /gallery >}}
+    design:
+      columns: '1'
 
   - block: markdown
     content:
