@@ -1,19 +1,43 @@
-// Bold DC Binwal in publication author lists, remove underline
+// ── Publication author list: no underline on any author link ──────────────
+.pub-authors a {
+  text-decoration: none;
+}
+
+// ── Highlight D.C. Binwal: bold + distinct colour, no underline ───────────
 .pub-authors a[href*="devesh"],
-.pub-authors a[href*="binwal"] {
-  font-weight: bold;
-  text-decoration: none;
-}
-
+.pub-authors a[href*="binwal"],
 .pub-authors .author-highlight {
-  font-weight: bold;
+  font-weight: 700;
+  color: #1565c0;        // accessible dark-blue highlight
   text-decoration: none;
 }
 
-// Justified text globally
+// ── Justified text everywhere ─────────────────────────────────────────────
 p,
 .article-style p,
 .biography,
-.pub-abstract {
+.pub-abstract,
+li {
   text-align: justify;
+}
+
+// ── Publication list: show all items, no "Show more" / pagination ─────────
+.pub-list-item {
+  page-break-inside: avoid;
+}
+
+// ── Research areas: side-by-side cards fill the row ──────────────────────
+.universal-card-view .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.universal-card-view .col-12 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+@media (max-width: 768px) {
+  .universal-card-view .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }

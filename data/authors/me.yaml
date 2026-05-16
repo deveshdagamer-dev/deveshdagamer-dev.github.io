@@ -49,25 +49,23 @@ education:
     summary: |
       Thesis: Investigations of HER Activity and Magnetic Exchange in Transition Metal
       Dichalcogenides and Halide Perovskites. Supervised by Prof. C.N.R. Rao, FRS and
-      Dr. Pratap Vishnoi. CGPA 9.0/10.0.
+      Dr. Pratap Vishnoi.
   - area: MS (Engg.), Materials Science
     institution: JNCASR, Bangalore, India
     date_start: '2019-08-01'
     date_end: '2021-09-30'
     summary: |
-      Thesis: Photochemical and Electrochemical Generation of Hydrogen Based on MoS2 and
-      MoSe2, and their Adducts with Other Low Dimensional Materials.
-      Supervised by Prof. C.N.R. Rao, FRS. CGPA 7.0/8.0.
+      Thesis: Photochemical and Electrochemical Generation of Hydrogen Based on MoS₂ and
+      MoSe₂, and their Adducts with Other Low Dimensional Materials.
+      Supervised by Prof. C.N.R. Rao, FRS.
   - area: MSc, Chemistry
     institution: Kumaun University, India
     date_start: '2016-01-01'
     date_end: '2018-12-31'
-    summary: 75.1%
   - area: BSc (Hons.), Chemistry
     institution: University of Delhi, India
     date_start: '2013-01-01'
     date_end: '2016-12-31'
-    summary: 69.85%
 work:
   - position: Research Associate
     company_name: JNCASR, Bangalore, India
@@ -83,18 +81,18 @@ awards:
   - title: Sheikh Saqr Junior Fellowship
     awarder: JNCASR
     date: '2021-01-01'
-    summary: Highly selective fellowship; only 2 awards per year nationally (2021-2023).
+    summary: Highly selective fellowship; only 2 awards per year nationally (2021–2023).
   - title: DST-INSPIRE Fellowship
     awarder: Department of Science & Technology, Govt. of India
     date: '2021-01-01'
   - title: SERB International Travel Support
     awarder: Govt. of India
     date: '2024-01-01'
-    summary: For attending the Gordon Research Conference on Unconventional Semiconductors, USA (2024).
+    summary: Gordon Research Conference on Unconventional Semiconductors, USA (2024).
   - title: RAK CAM Travel Grant
     awarder: Ras Al Khaimah Center for Advanced Materials, UAE
     date: '2023-01-01'
-    summary: For attending the International Workshop on Advanced Materials, UAE (2023).
+    summary: International Workshop on Advanced Materials, UAE (2023).
   - title: Fellowship for Visiting PhD Research Program
     awarder: University of Newcastle, Australia
     date: '2025-01-01'
@@ -104,4 +102,4 @@ awards:
   - title: DST-INSPIRE Scholarship
     awarder: Govt. of India
     date: '2013-01-01'
-    summary: Awarded to top 1% of Class XII students nationally (2013-2018).
+    summary: Awarded to top 1% of Class XII students nationally (2013–2018).
