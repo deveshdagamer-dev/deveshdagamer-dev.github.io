@@ -21,5 +21,5 @@ tags:
   - WS2
   - HER
 featured: false
-doi: ""
+doi: "10.1002/zaac.202400035"
 ---

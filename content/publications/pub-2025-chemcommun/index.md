@@ -17,5 +17,5 @@ tags:
   - Molybdenum
   - 1D Materials
 featured: true
-doi: "10.1039/D5CC00001G"
+doi: "10.1039/D5CC04751J"
 ---

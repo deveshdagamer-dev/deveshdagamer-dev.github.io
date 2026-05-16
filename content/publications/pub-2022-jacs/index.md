@@ -26,5 +26,5 @@ tags:
   - Halide Perovskites
   - Hybrid Materials
 featured: false
-doi: ""
+doi: "10.1021/jacs.1c12760"
 ---

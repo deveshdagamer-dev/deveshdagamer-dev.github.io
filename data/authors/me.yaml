@@ -23,13 +23,13 @@ profiles:
     url: mailto:deveshchandrabinwal@gmail.com
     label: Email
   - icon: brands/google-scholar
-    url: https://scholar.google.com/citations?user=deveshbinwal
+    url: https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ&view_op=list_works&sortby=pubdate
     label: Google Scholar
   - icon: brands/orcid
-    url: https://orcid.org/my-orcid
+    url: https://orcid.org/0000-0002-5418-8577
     label: ORCID
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/devesh-chandra-binwal
+    url: https://www.linkedin.com/in/devesh-binwal/
     label: LinkedIn
   - icon: brands/researchgate
     url: https://www.researchgate.net/profile/Devesh-Chandra-Binwal
