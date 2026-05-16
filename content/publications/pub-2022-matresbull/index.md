@@ -18,5 +18,7 @@ tags:
   - HER
   - Nanocomposites
 featured: false
-doi: "10.1016/j.matresbu.2021.111697"
+hugoblox:
+  ids:
+    doi: "10.1016/j.matresbu.2021.111697"
 ---

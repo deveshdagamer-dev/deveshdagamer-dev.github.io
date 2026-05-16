@@ -23,5 +23,7 @@ tags:
   - Magnetism
   - Neutron Scattering
 featured: false
-doi: "10.1103/PhysRevB.111.L140411"
+hugoblox:
+  ids:
+    doi: "10.1103/PhysRevB.111.L140411"
 ---

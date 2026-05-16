@@ -20,5 +20,7 @@ tags:
   - Dimensionality Control
   - Molybdenum
 featured: true
-doi: "10.1039/D3SC00132F"
+hugoblox:
+  ids:
+    doi: "10.1039/D3SC00132F"
 ---

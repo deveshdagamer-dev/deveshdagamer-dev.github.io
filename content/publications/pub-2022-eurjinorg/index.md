@@ -18,5 +18,7 @@ tags:
   - HER
   - 2D Materials
 featured: false
-doi: "10.1002/ejic.202101086"
+hugoblox:
+  ids:
+    doi: "10.1002/ejic.202101086"
 ---

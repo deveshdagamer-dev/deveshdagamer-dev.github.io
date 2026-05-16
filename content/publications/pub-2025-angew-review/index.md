@@ -21,5 +21,7 @@ tags:
   - Magnetic Exchange
   - Molybdenum
 featured: true
-doi: ""
+hugoblox:
+  ids:
+    doi: ""
 ---

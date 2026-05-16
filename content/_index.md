@@ -95,15 +95,16 @@ sections:
   - block: markdown
     content:
       title: 'Gallery'
-      subtitle: ''
+      subtitle: 'Photos will appear here once images are uploaded to uploads/gallery-*.jpg'
       text: |-
-        {{< gallery >}}
-          {{< figure src="uploads/gallery-1.jpg" caption="With Prof. C.N.R. Rao, JNCASR" >}}
-          {{< figure src="uploads/gallery-2.jpg" caption="Poster presentation, GRC USA 2024" >}}
-          {{< figure src="uploads/gallery-3.jpg" caption="Oral talk, University of Newcastle 2025" >}}
-          {{< figure src="uploads/gallery-4.jpg" caption="Group photo, JNCASR–Rice University Workshop 2023" >}}
-          {{< figure src="uploads/gallery-5.jpg" caption="IWAM poster, UAE 2023" >}}
-        {{< /gallery >}}
+        | | |
+        |---|---|
+        | ![With Prof. C.N.R. Rao, JNCASR](uploads/gallery-1.jpg) | ![Poster presentation, GRC USA 2024](uploads/gallery-2.jpg) |
+        | *With Prof. C.N.R. Rao, JNCASR* | *Poster presentation, GRC USA 2024* |
+        | ![Oral talk, University of Newcastle 2025](uploads/gallery-3.jpg) | ![Group photo, JNCASR–Rice University Workshop 2023](uploads/gallery-4.jpg) |
+        | *Oral talk, University of Newcastle 2025* | *Group photo, JNCASR–Rice University Workshop 2023* |
+        | ![IWAM poster, UAE 2023](uploads/gallery-5.jpg) | |
+        | *IWAM poster, UAE 2023* | |
     design:
       columns: '1'
 

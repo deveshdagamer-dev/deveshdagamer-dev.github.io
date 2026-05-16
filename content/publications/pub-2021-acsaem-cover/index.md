@@ -21,5 +21,7 @@ tags:
   - HER
   - Nanocomposites
 featured: false
-doi: "10.1021/acsaem.0c02874"
+hugoblox:
+  ids:
+    doi: "10.1021/acsaem.0c02874"
 ---

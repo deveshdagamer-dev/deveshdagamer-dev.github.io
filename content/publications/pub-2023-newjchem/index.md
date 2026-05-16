@@ -21,5 +21,7 @@ tags:
   - HER
   - NbS2
 featured: false
-doi: "10.1039/D3NJ02171H"
+hugoblox:
+  ids:
+    doi: "10.1039/D3NJ02171H"
 ---

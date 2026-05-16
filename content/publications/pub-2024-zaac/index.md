@@ -21,5 +21,7 @@ tags:
   - WS2
   - HER
 featured: false
-doi: "10.1002/zaac.202400035"
+hugoblox:
+  ids:
+    doi: "10.1002/zaac.202400035"
 ---
