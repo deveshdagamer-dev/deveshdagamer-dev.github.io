@@ -1,0 +1,19 @@
+// Bold DC Binwal in publication author lists, remove underline
+.pub-authors a[href*="devesh"],
+.pub-authors a[href*="binwal"] {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.pub-authors .author-highlight {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+// Justified text globally
+p,
+.article-style p,
+.biography,
+.pub-abstract {
+  text-align: justify;
+}
