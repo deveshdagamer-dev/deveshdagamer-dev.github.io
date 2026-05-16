@@ -4,7 +4,7 @@ authors:
   - P. Vishnoi
   - J. L. Zuo
   - X. Li
-  - me
+  - DC Binwal
   - K. E. Wyckoff
   - L. Mao
   - L. Kautzsch
@@ -15,20 +15,16 @@ authors:
   - A. K. Cheetham
 date: "2022-03-01T00:00:00Z"
 publishDate: "2022-03-01T00:00:00Z"
+show_date: false
+weight: 10
 publication_types: ["article-journal"]
 publication: "*Journal of the American Chemical Society*, 144, 6661–6666"
 publication_short: "J. Am. Chem. Soc."
-abstract: "Hybrid layered double perovskite halides of transition metals: synthesis, structure, and properties."
-summary: "Hybrid layered double perovskite halides of transition metals reported in JACS."
+abstract: "Hybrid layered double perovskite halides of transition metals: synthesis, structure and properties."
+summary: "Hybrid layered double perovskite halides of transition metals."
 tags:
   - Halide Perovskites
   - Hybrid Materials
-  - Transition Metals
 featured: false
-links:
-  - name: DOI
-    url: https://doi.org/10.1021/jacs.2c00826
-url_pdf: ''
-projects: []
-slides: ""
+doi: ""
 ---

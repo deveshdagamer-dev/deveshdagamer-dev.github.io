@@ -1,10 +1,12 @@
 ---
 title: "[N(CH₃)₄]₂MᴵMoCl₆ (Mᴵ = Na, Ag): Expanding the family of 1-D halide double perovskite-related materials by large A-site cation"
 authors:
-  - me
+  - DC Binwal
   - P. Vishnoi
 date: "2025-01-01T00:00:00Z"
 publishDate: "2025-01-01T00:00:00Z"
+show_date: false
+weight: 2
 publication_types: ["article-journal"]
 publication: "*Chemical Communications*, 61, 18352–18355"
 publication_short: "Chem. Commun."
@@ -15,12 +17,5 @@ tags:
   - Molybdenum
   - 1D Materials
 featured: true
-links:
-  - name: DOI
-    url: https://doi.org/10.1039/D5CC00001G
-    icon_pack: ai
-    icon: doi
-url_pdf: ''
-projects: []
-slides: ""
+doi: "10.1039/D5CC00001G"
 ---

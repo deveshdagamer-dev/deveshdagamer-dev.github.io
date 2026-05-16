@@ -1,7 +1,7 @@
 ---
 title: "Tailorable magnetic exchange and optical absorption in 1-D halide double perovskites (CH₃NH₃)₂NaMoCl₍₆₋ₓ₎Brₓ"
 authors:
-  - me
+  - DC Binwal
   - K. Anand
   - M. Sharma
   - K. V. Saurav
@@ -9,6 +9,8 @@ authors:
   - P. Vishnoi
 date: "2024-01-01T00:00:00Z"
 publishDate: "2024-01-01T00:00:00Z"
+show_date: false
+weight: 3
 publication_types: ["article-journal"]
 publication: "*Chemistry of Materials*, 36(16), 7719–7730"
 publication_short: "Chem. Mater."
@@ -18,11 +20,6 @@ tags:
   - Halide Perovskites
   - Magnetic Exchange
   - Molybdenum
-featured: true
-links:
-  - name: DOI
-    url: https://doi.org/10.1021/acs.chemmater.4c01234
-url_pdf: ''
-projects: []
-slides: ""
+featured: false
+doi: ""
 ---
