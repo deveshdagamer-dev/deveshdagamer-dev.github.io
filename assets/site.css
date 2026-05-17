@@ -338,6 +338,67 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   margin: 0;
 }
 
+.home-hero .container {
+  padding-top: 3.2rem;
+  padding-bottom: 2.45rem;
+}
+
+.home-snapshot {
+  padding: 2rem 0 1.6rem;
+}
+
+.home-training {
+  padding: 1.8rem 0 2.4rem;
+}
+
+.home-snapshot .container,
+.home-training .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.home-snapshot .section-head,
+.home-training .section-head {
+  margin-bottom: 1rem;
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.snapshot-card {
+  padding: 1rem;
+}
+
+.snapshot-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.snapshot-card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.home-training .education-list {
+  gap: 0.65rem;
+}
+
+.home-training .education-card {
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+}
+
+.education-detail h3 {
+  margin-bottom: 0.2rem;
+}
+
+.education-detail p {
+  line-height: 1.55;
+}
+
 .page-hero {
   background: var(--paper);
   border-bottom: 1px solid var(--line);
@@ -731,6 +792,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .nav-links { justify-content: flex-start; }
   .hero .container { grid-template-columns: 1fr; }
   .portrait-card { max-width: 360px; }
+  .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr 1fr; }
   .research-card { grid-template-columns: 1fr; }
   .pub-body { grid-template-columns: 130px minmax(0, 1fr); }
@@ -743,6 +805,10 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .nav-links { overflow-x: auto; width: 100%; flex-wrap: nowrap; padding-bottom: 0.2rem; }
   .nav-links a { white-space: nowrap; }
   .hero .container { padding-top: 2.8rem; padding-bottom: 2.8rem; }
+  .home-hero .container { padding-top: 2.35rem; padding-bottom: 2rem; }
+  .home-snapshot { padding: 1.5rem 0 1.3rem; }
+  .home-training { padding: 1.45rem 0 2rem; }
+  .snapshot-grid { grid-template-columns: 1fr; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr; }
   .pub-card, .pub-body, .education-card, .logo-card { grid-template-columns: 1fr; }
   .pub-toc { max-width: 260px; }
