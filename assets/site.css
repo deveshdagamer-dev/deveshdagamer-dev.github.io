@@ -211,6 +211,13 @@ p:not(.eyebrow):not(.identity):not(.meta):not(.pub-title):not(.authors):not(.jou
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
+.link-icon-img {
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .button.secondary .link-icon,
 .profile-link.secondary .link-icon,
 .profile-list .link-icon {
@@ -271,6 +278,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.full-span { grid-column: 1 / -1; }
 
 .card {
   background: var(--panel);
@@ -302,6 +310,11 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   padding: 0.38rem 0;
   border-top: 1px solid #edf2f4;
   color: var(--muted);
+}
+
+.list-clean.columns {
+  columns: 2;
+  column-gap: 2rem;
 }
 
 .page-hero {
@@ -348,6 +361,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   display: grid;
   grid-template-columns: 104px minmax(0, 1fr);
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .pub-year {
@@ -361,6 +375,19 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 .authors, .journal, .highlight { margin: 0.2rem 0; color: var(--muted); }
 .journal { font-style: italic; }
 .highlight { color: var(--ink); }
+
+.publication-list {
+  padding-top: 1rem;
+}
+
+.year-heading {
+  margin: 2.2rem 0 1rem;
+  font-size: 1.45rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5rem;
+}
+
+.year-heading:first-child { margin-top: 0; }
 
 .link-pills {
   display: flex;
@@ -426,20 +453,22 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 
 .carousel-track {
   display: flex;
-  width: 500%;
-  animation: gallerySlide 24s infinite;
+  width: 400%;
+  animation: gallerySlide 20s infinite;
 }
 
 .carousel-slide {
-  width: 20%;
+  width: 25%;
   margin: 0;
   position: relative;
+  background: #132f48;
 }
 
 .carousel-slide img {
   width: 100%;
   height: min(62vh, 560px);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .carousel-slide figcaption {
@@ -469,11 +498,10 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 @keyframes gallerySlide {
-  0%, 16% { transform: translateX(0); }
-  20%, 36% { transform: translateX(-20%); }
-  40%, 56% { transform: translateX(-40%); }
-  60%, 76% { transform: translateX(-60%); }
-  80%, 96% { transform: translateX(-80%); }
+  0%, 20% { transform: translateX(0); }
+  25%, 45% { transform: translateX(-25%); }
+  50%, 70% { transform: translateX(-50%); }
+  75%, 95% { transform: translateX(-75%); }
   100% { transform: translateX(0); }
 }
 
@@ -487,6 +515,8 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   margin: 2rem 0 1rem;
   font-size: 1.35rem;
 }
+
+.gallery-section-title.first { margin-top: 0; }
 
 .gallery-item {
   margin: 0;
@@ -505,7 +535,9 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 .gallery-item img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: #eef3f3;
 }
 
 .gallery-item figcaption {
@@ -522,8 +554,15 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .contact-panel h3 { color: #fff; }
+.contact-panel h3 + p { margin-top: 0.4rem; }
 .contact-panel p { color: #e8eef0; }
-.contact-panel a { color: #fff; font-weight: 750; }
+.contact-panel a {
+  color: #fff;
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
 
 .profile-list {
   display: grid;
@@ -534,6 +573,41 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   justify-content: flex-start;
   background: #fff;
   color: var(--navy);
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  color: var(--navy);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.75rem 0.85rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(79, 143, 146, 0.28);
+  border-color: var(--teal);
+}
+
+.contact-form .button {
+  border: 0;
+  cursor: pointer;
+  justify-self: start;
 }
 
 .site-footer {
@@ -568,6 +642,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .portrait-card { max-width: 360px; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr 1fr; }
   .research-card { grid-template-columns: 1fr; }
+  .list-clean.columns { columns: 1; }
 }
 
 @media (max-width: 620px) {

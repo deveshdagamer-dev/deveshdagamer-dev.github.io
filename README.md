@@ -10,25 +10,20 @@ This is a simple static website designed for GitHub Pages. It does not require H
 - `expertise.html` - skills and methods
 - `awards.html` - academic highlights, conferences, awards, visits, and service
 - `gallery.html` - academic photo gallery
-- `cv.html` - CV download page
 - `contact.html` - email and profile links
 - `assets/site.css` - shared design styles
 - `assets/images/` - website images
+- `assets/icons/` - profile and contact icons
 - `assets/docs/` - CV and document downloads
+- `CNAME` - custom domain for GitHub Pages
 
 ## GitHub Pages Setup
 
-In the GitHub repository, go to:
+This repository deploys through the included GitHub Actions workflow:
 
-Settings -> Pages -> Build and deployment
+- `.github/workflows/deploy.yml`
 
-Use:
-
-- Source: Deploy from a branch
-- Branch: `main`
-- Folder: `/root`
-
-The custom domain `deveshbinwal.com` can be connected later. Add a `CNAME` file only after the domain DNS records point to GitHub Pages.
+The workflow publishes the root HTML files, `assets/site.css`, images, icons, documents, `.nojekyll`, and `CNAME`. The custom domain is `deveshbinwal.com`.
 
 ## Updating Content
 
@@ -37,7 +32,7 @@ Most edits can be made directly in the matching `.html` file. For example:
 - Edit research text in `research.html`
 - Add publications in `publications.html`
 - Replace or add photos and captions in `gallery.html` and `assets/images/`
-- Replace the CV in `assets/docs/`
+- Replace the CV file in `assets/docs/` and update the homepage CV button
 - Update emails and profile links in `contact.html`
 
 See `CONTENT_UPDATE_GUIDE.md` for non-coder instructions.

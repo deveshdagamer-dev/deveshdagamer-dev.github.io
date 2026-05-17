@@ -31,11 +31,12 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html research.html publications.html expertise.html awards.html gallery.html cv.html contact.html _site/
-          cp .nojekyll _site/
+          cp .nojekyll CNAME _site/
           mkdir -p _site/assets
           cp assets/site.css _site/assets/site.css
           cp -R assets/images _site/assets/images
           cp -R assets/docs _site/assets/docs
+          cp -R assets/icons _site/assets/icons
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3

@@ -17,7 +17,6 @@
         <a href="expertise.html">Expertise</a>
         <a href="awards.html">Highlights</a>
         <a href="gallery.html">Gallery</a>
-        <a href="cv.html">CV</a>
         <a class="active" href="contact.html">Contact</a>
       </nav>
     </div>
@@ -36,29 +35,33 @@
       <div class="container grid two">
         <article class="contact-panel">
           <h3>Email</h3>
-          <p><a href="mailto:deveshchandrabinwal@gmail.com"><span class="link-icon" aria-hidden="true">@</span> deveshchandrabinwal@gmail.com</a></p>
-          <p><a href="mailto:dcbinwal@jncasr.ac.in"><span class="link-icon" aria-hidden="true">@</span> dcbinwal@jncasr.ac.in</a></p>
+          <p><a href="mailto:deveshdagamer@gmail.com"><img class="link-icon-img" src="assets/icons/email.png" alt="" aria-hidden="true">deveshdagamer@gmail.com</a></p>
+          <h3>Website</h3>
+          <p><a href="https://deveshbinwal.com" target="_blank" rel="noopener">deveshbinwal.com</a></p>
         </article>
 
         <article class="card">
           <h3>Academic profiles</h3>
           <div class="profile-list">
-            <a class="profile-link secondary" href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" target="_blank" rel="noopener"><span class="link-icon" aria-hidden="true">GS</span>Google Scholar</a>
-            <a class="profile-link secondary" href="https://orcid.org/0000-0002-5418-8577" target="_blank" rel="noopener"><span class="link-icon" aria-hidden="true">iD</span>ORCID</a>
-            <a class="profile-link secondary" href="https://www.researchgate.net/profile/Devesh-Chandra-Binwal" target="_blank" rel="noopener"><span class="link-icon" aria-hidden="true">RG</span>ResearchGate</a>
-            <a class="profile-link secondary" href="https://www.linkedin.com/in/devesh-binwal/" target="_blank" rel="noopener"><span class="link-icon" aria-hidden="true">in</span>LinkedIn</a>
+            <a class="profile-link secondary" href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" target="_blank" rel="noopener"><img class="link-icon-img" src="assets/icons/google-scholar.png" alt="" aria-hidden="true">Google Scholar</a>
+            <a class="profile-link secondary" href="https://orcid.org/0000-0002-5418-8577" target="_blank" rel="noopener"><img class="link-icon-img" src="assets/icons/orcid.png" alt="" aria-hidden="true">ORCID</a>
+            <a class="profile-link secondary" href="https://www.researchgate.net/profile/Devesh-Chandra-Binwal" target="_blank" rel="noopener"><img class="link-icon-img" src="assets/icons/researchgate.png" alt="" aria-hidden="true">ResearchGate</a>
+            <a class="profile-link secondary" href="https://www.linkedin.com/in/devesh-binwal/" target="_blank" rel="noopener"><img class="link-icon-img" src="assets/icons/linkedin.png" alt="" aria-hidden="true">LinkedIn</a>
           </div>
         </article>
 
-        <article class="card">
-          <h3>Website</h3>
-          <p><a href="https://deveshdagamer-dev.github.io/" target="_blank" rel="noopener">deveshdagamer-dev.github.io</a></p>
-          <p>The custom domain <strong>deveshbinwal.com</strong> can be connected later after DNS is configured for GitHub Pages.</p>
-        </article>
-
-        <article class="card">
-          <h3>Institutional affiliation</h3>
-          <p>New Chemistry Unit, Jawaharlal Nehru Centre for Advanced Scientific Research (JNCASR), Jakkur, Bangalore 560064, Karnataka, India.</p>
+        <article class="card full-span">
+          <h3>Contact enquiry</h3>
+          <!-- This static GitHub Pages form uses a mailto fallback. Replace the action with a Formspree/Getform endpoint if using a hosted form service. -->
+          <form class="contact-form" action="mailto:deveshdagamer@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" autocomplete="name" required>
+            <label for="email">Email address</label>
+            <input id="email" name="Email" type="email" autocomplete="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" rows="6" required></textarea>
+            <button class="button" type="submit"><img class="link-icon-img" src="assets/icons/email.png" alt="" aria-hidden="true">Send enquiry</button>
+          </form>
         </article>
       </div>
     </section>
@@ -66,8 +69,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <span>(c) 2026 Dr. Devesh Chandra Binwal</span>
-      <span><a href="cv.html">Download CV</a></span>
+      <span>© 2026 Dr. Devesh Chandra Binwal</span>
+      <span><a href="index.html">Home</a></span>
     </div>
   </footer>
 </body>
