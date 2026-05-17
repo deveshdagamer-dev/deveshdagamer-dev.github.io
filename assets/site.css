@@ -472,6 +472,8 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 
 .research-theme-media {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -491,12 +493,13 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .research-theme-video {
+  flex: 1 1 auto;
   background: #f4f6f9;
-  padding: 0;
+  padding: 0.5rem;
   object-fit: contain;
-  object-position: center top;
-  transform: scale(0.85);
-  transform-origin: center top;
+  object-position: center center;
+  transform: scale(1.08);
+  transform-origin: center center;
 }
 
 .research-theme-media figcaption {
