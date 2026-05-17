@@ -21,4 +21,4 @@ featured: true
 projects: []
 ---
 
-Poster presentation at the **Gordon Research Conference on Unconventional Semiconductors**, USA (2024). Supported by the SERB International Travel Support Grant, Govt. of India.
+Poster presentation at the **Gordon Research Conference on Unconventional Semiconductors**, USA (2024). Supported by SERB-ITS International Conference Travel Support, Govt. of India.
