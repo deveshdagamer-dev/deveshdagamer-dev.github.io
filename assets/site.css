@@ -501,6 +501,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .research-theme-alt {
+  align-items: center;
   border-top-color: var(--navy-2);
   grid-template-columns: minmax(420px, 0.95fr) minmax(0, 1fr);
 }
