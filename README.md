@@ -23,7 +23,7 @@ This repository deploys through the included GitHub Actions workflow:
 
 - `.github/workflows/deploy.yml`
 
-The workflow publishes the root HTML files, `assets/site.css`, images, icons, documents, `.nojekyll`, and `CNAME`. The custom domain is `deveshbinwal.com`.
+The workflow publishes the root HTML files, `assets/site.css`, images, icons, documents, `.nojekyll`, and `CNAME`. The public website is `https://www.deveshbinwal.com`.
 
 ## Updating Content
 
@@ -32,7 +32,7 @@ Most edits can be made directly in the matching `.html` file. For example:
 - Edit research text in `research.html`
 - Add publications in `publications.html`
 - Replace or add photos and captions in `gallery.html` and `assets/images/`
-- Replace the CV file in `assets/docs/` and update the homepage CV button
+- Replace `assets/docs/CV_Dr. Devesh Chandra Binwal.pdf` when updating the CV
 - Update emails and profile links in `contact.html`
 
 See `CONTENT_UPDATE_GUIDE.md` for non-coder instructions.

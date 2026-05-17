@@ -24,7 +24,8 @@ body {
   font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif;
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.68;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 img { max-width: 100%; display: block; }
@@ -104,11 +105,11 @@ p:not(.eyebrow):not(.identity):not(.meta):not(.pub-title):not(.authors):not(.jou
 
 .hero .container {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) 360px;
+  grid-template-columns: minmax(0, 1.35fr) 350px;
   gap: 3rem;
   align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem;
 }
 
 .eyebrow {
@@ -129,7 +130,7 @@ p:not(.eyebrow):not(.identity):not(.meta):not(.pub-title):not(.authors):not(.jou
   line-height: 1.08;
 }
 
-.hero h1 { font-size: clamp(2.4rem, 5vw, 4.65rem); color: #fff; }
+.hero h1 { font-size: clamp(2.55rem, 5vw, 4.75rem); color: #fff; }
 
 .identity {
   margin: 0.95rem 0 1.25rem;
@@ -142,8 +143,10 @@ p:not(.eyebrow):not(.identity):not(.meta):not(.pub-title):not(.authors):not(.jou
 .hero-copy {
   max-width: 780px;
   color: #eef4f4;
-  font-size: 1.05rem;
+  font-size: 1.03rem;
 }
+
+.hero-copy p + p { margin-top: 0.85rem; }
 
 .hero-actions,
 .button-row {
@@ -317,6 +320,24 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   column-gap: 2rem;
 }
 
+.education-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.education-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.education-card .meta,
+.education-card h3,
+.education-card p {
+  margin: 0;
+}
+
 .page-hero {
   background: var(--paper);
   border-bottom: 1px solid var(--line);
@@ -362,6 +383,31 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   grid-template-columns: 104px minmax(0, 1fr);
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.pub-body {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.pub-body.no-media {
+  grid-template-columns: 1fr;
+}
+
+.pub-toc {
+  margin: 0;
+  background: #f6f8f8;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.55rem;
+}
+
+.pub-toc img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
 }
 
 .pub-year {
@@ -439,6 +485,51 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.logo-card {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.card-logo {
+  width: 78px;
+  height: 58px;
+  object-fit: contain;
+  padding: 0.35rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.skill-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.skill-image {
+  margin: 0;
+  background: #f6f8f8;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #eef3f3;
+}
+
+.skill-image figcaption {
+  padding: 0.65rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.86rem;
 }
 
 .gallery-carousel {
@@ -642,6 +733,8 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .portrait-card { max-width: 360px; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr 1fr; }
   .research-card { grid-template-columns: 1fr; }
+  .pub-body { grid-template-columns: 130px minmax(0, 1fr); }
+  .skill-feature { grid-template-columns: 1fr; }
   .list-clean.columns { columns: 1; }
 }
 
@@ -651,7 +744,8 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .nav-links a { white-space: nowrap; }
   .hero .container { padding-top: 2.8rem; padding-bottom: 2.8rem; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr; }
-  .pub-card { grid-template-columns: 1fr; }
+  .pub-card, .pub-body, .education-card, .logo-card { grid-template-columns: 1fr; }
+  .pub-toc { max-width: 260px; }
   .section-head { display: block; }
   .carousel-slide img { height: 360px; }
 }

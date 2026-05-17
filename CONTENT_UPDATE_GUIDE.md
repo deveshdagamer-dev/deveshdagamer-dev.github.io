@@ -11,7 +11,9 @@ This website is a simple static GitHub Pages site. The visible pages are control
 - `awards.html` - academic highlights, conferences, visits, recognition, and service
 - `gallery.html` - carousel and gallery images
 - `contact.html` - email, website, contact form, and academic profile links
-- `assets/site.css` - colors, spacing, layout, gallery, and mobile styling
+- `assets/site.css` - colors, spacing, layout, gallery, publication cards, and mobile styling
+- `assets/images/toc/` - publication TOC and graphical abstract images
+- `assets/images/logos/` - fellowship, conference, and institution logos
 - `CNAME` - custom domain for GitHub Pages
 
 ## Update publications
@@ -25,6 +27,18 @@ This website is a simple static GitHub Pages site. The visible pages are control
 7. Use chemical subscripts such as `MoS<sub>2</sub>` and `Cl<sub>6</sub>`.
 
 If a DOI or PDF is not available, leave that button out until it is ready.
+
+## Update TOC images and logos
+
+Publication TOC images are stored in `assets/images/toc/`. Use them only for published papers, not for manuscripts under review or revision submitted.
+
+1. Put the new TOC image in `assets/images/toc/`.
+2. Open `publications.html`.
+3. Add the image inside the matching publication card using the same pattern as existing `<figure class="pub-toc">` blocks.
+4. Use the existing `pub-toc` class so the full image remains visible.
+5. Write clear alt text, such as `TOC image for Chemical Science publication`.
+
+Logos are stored in `assets/images/logos/`. Use them only where they help visitors understand fellowships, travel support, conferences, or academic visits. Keep logos small and do not stretch them.
 
 ## Update gallery images and captions
 
@@ -45,11 +59,10 @@ Keep captions short and factual, for example:
 ## Update the CV
 
 1. Put the new CV file in `assets/docs/`.
-2. Use a clear file name, for example `CV-Devesh-Chandra-Binwal.pdf`.
+2. Use this exact file name: `CV_Dr. Devesh Chandra Binwal.pdf`.
 3. Open `index.html`.
-4. Search for `assets/docs/CV-Devesh-Chandra-Binwal.docx`.
-5. Replace it with the new file name.
-6. If the file changes from Word to PDF, change the button text if needed.
+4. Search for `assets/docs/CV_Dr.%20Devesh%20Chandra%20Binwal.pdf`.
+5. Keep the homepage CV button linked to that PDF.
 
 The CV is intentionally linked from the homepage only.
 
