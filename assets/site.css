@@ -495,11 +495,15 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 .research-theme-video {
   flex: 1 1 auto;
   background: #f4f6f9;
-  padding: 0.5rem;
+  padding: 0.35rem;
   object-fit: contain;
   object-position: center center;
-  transform: scale(1.08);
+  transform: scale(1.16);
   transform-origin: center center;
+}
+
+.research-theme-animation-media .research-theme-video + figcaption {
+  border-top: 0;
 }
 
 .research-theme-media figcaption {
