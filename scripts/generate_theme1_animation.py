@@ -22,8 +22,8 @@ bg_color = "#F4F6F9"
 fig, ax = plt.subplots(figsize=(12, 6.75), dpi=150)
 fig.patch.set_facecolor(bg_color)
 ax.set_facecolor(bg_color)
-ax.set_xlim(-10, 10)
-ax.set_ylim(-5.8, 5.8)
+ax.set_xlim(-8.4, 8.4)
+ax.set_ylim(-4.75, 4.75)
 ax.axis("off")
 plt.subplots_adjust(left=0, right=1, bottom=0, top=1)
 
