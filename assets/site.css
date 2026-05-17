@@ -506,6 +506,18 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   border-top: 0;
 }
 
+.research-theme-video-media {
+  background: #f4f6f9;
+}
+
+.research-theme-video-media .theme-video {
+  min-height: 330px;
+  padding: 0;
+  object-fit: cover;
+  border-radius: 6px;
+  transform: none;
+}
+
 .research-theme-media figcaption {
   padding: 0.7rem 0.85rem;
   color: var(--navy);
@@ -963,7 +975,9 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .pub-card, .pub-body, .education-card, .logo-card { grid-template-columns: 1fr; }
   .pub-toc { max-width: 260px; }
   .research-theme { padding: 1rem; }
-  .research-theme-media img { min-height: 210px; }
+  .research-theme-media img,
+  .research-theme-video { min-height: 210px; }
+  .research-theme-video-media .theme-video { min-height: 240px; }
   .carousel-pair {
     grid-template-columns: 1fr 1fr;
     gap: 0.45rem;
