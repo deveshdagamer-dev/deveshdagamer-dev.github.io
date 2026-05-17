@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html research.html publications.html awards.html gallery.html cv.html contact.html _site/
-          cp .nojekyll CNAME _site/
+          cp .nojekyll CNAME sitemap.xml _site/
           mkdir -p _site/assets
           cp assets/site.css _site/assets/site.css
           cp -R assets/images _site/assets/images
