@@ -14,6 +14,8 @@ public/*
 public/assets/*
 !public/assets/research/
 !public/assets/research/*
+!public/assets/videos/
+!public/assets/videos/*
 
 # Hugo resources (processed assets)
 resources/

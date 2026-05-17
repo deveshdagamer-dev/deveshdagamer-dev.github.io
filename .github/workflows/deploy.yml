@@ -37,6 +37,10 @@ jobs:
           cp -R assets/images _site/assets/images
           cp -R assets/docs _site/assets/docs
           cp -R assets/icons _site/assets/icons
+          if [ -d public/assets ]; then
+            mkdir -p _site/public
+            cp -R public/assets _site/public/assets
+          fi
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
