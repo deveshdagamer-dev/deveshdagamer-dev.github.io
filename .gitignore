@@ -8,6 +8,12 @@
 
 # Generated site output
 public/
+!public/
+public/*
+!public/assets/
+public/assets/*
+!public/assets/research/
+!public/assets/research/*
 
 # Hugo resources (processed assets)
 resources/
