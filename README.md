@@ -8,7 +8,7 @@ This is a simple static website designed for GitHub Pages. It does not require H
 - `research.html` - research areas
 - `publications.html` - publication cards and DOI links
 - `expertise.html` - skills and methods
-- `awards.html` - awards, fellowships, presentations, and service
+- `awards.html` - academic highlights, conferences, awards, visits, and service
 - `gallery.html` - academic photo gallery
 - `cv.html` - CV download page
 - `contact.html` - email and profile links
@@ -37,7 +37,7 @@ Most edits can be made directly in the matching `.html` file. For example:
 
 - Edit research text in `research.html`
 - Add publications in `publications.html`
-- Replace or add photos in `assets/images/`
+- Replace or add photos and captions in `gallery.html` and `assets/images/`
 - Replace the CV in `assets/docs/`
 - Update emails and profile links in `contact.html`
 
