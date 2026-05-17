@@ -15,7 +15,6 @@ This is a simple static website designed for GitHub Pages. It does not require H
 - `assets/site.css` - shared design styles
 - `assets/images/` - website images
 - `assets/docs/` - CV and document downloads
-- `CNAME` - custom domain configuration for `deveshbinwal.com`
 
 ## GitHub Pages Setup
 
@@ -29,7 +28,7 @@ Use:
 - Branch: `main`
 - Folder: `/root`
 
-The `CNAME` file is already prepared for `deveshbinwal.com`. After publishing through GitHub Pages, configure the domain DNS records at your domain provider according to GitHub Pages instructions.
+The custom domain `deveshbinwal.com` can be connected later. Add a `CNAME` file only after the domain DNS records point to GitHub Pages.
 
 ## Updating Content
 
