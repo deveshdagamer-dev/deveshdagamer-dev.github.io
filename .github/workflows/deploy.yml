@@ -34,9 +34,12 @@ jobs:
           cp .nojekyll CNAME sitemap.xml favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png _site/
           mkdir -p _site/assets
           cp assets/site.css _site/assets/site.css
+          cp assets/site.js assets/home.js assets/gallery.js _site/assets/
           cp -R assets/images _site/assets/images
           cp -R assets/docs _site/assets/docs
           cp -R assets/icons _site/assets/icons
+          mkdir -p _site/assets/media
+          cp assets/media/home-periodic-table-mo-transition.mp4 _site/assets/media/
           if [ -d public/assets ]; then
             mkdir -p _site/public
             cp -R public/assets _site/public/assets
