@@ -12,6 +12,29 @@
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <div class="gallery-intro" data-gallery-intro aria-label="Gallery cinematic intro">
+    <div class="film-stage" aria-hidden="true">
+      <div class="film-strip-track">
+        <figure class="film-frame"><img src="assets/images/first-meeting-prof-rao.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/with-prof-rao-2022.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/ms-degree-prof-rao.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/grc-boston-poster.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/poster-discussion-tony-cheetham.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/prof-mercouri-kanatzidis.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/prof-rao-90-alumni-current.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/rao-90-labmates.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/uon-visit.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/unsw-visit.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/thesis-submission.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/rao-blessings-defense.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/after-defense-lab-members.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/phd-degree-prof-rao-2025.jpg" alt=""></figure>
+        <figure class="film-frame"><img src="assets/images/receiving-phd-degree-2025.jpg" alt=""></figure>
+      </div>
+    </div>
+    <button class="gallery-intro-skip" type="button" data-gallery-intro-skip>Skip</button>
+  </div>
+
   <header class="site-header">
     <div class="nav-wrap">
       <a class="brand" href="index.html">Dr. Devesh Chandra Binwal</a>
@@ -39,29 +62,29 @@
       <div class="container">
         <div class="gallery-carousel" aria-label="Featured academic gallery">
           <div class="carousel-track">
-            <figure class="carousel-slide"><img src="assets/images/prof-rao-90-alumni-current.jpg" alt="Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS's 90th birthday celebration with alumni and current students"><figcaption><span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS's 90<sup>th</sup> birthday celebration with alumni and current students.</figcaption></figure>
+            <figure class="carousel-slide"><img src="assets/images/prof-rao-90-alumni-current.jpg" alt="Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS's 90th birthday celebration with alumni and current students" loading="eager"><figcaption><span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS's 90<sup>th</sup> birthday celebration with alumni and current students.</figcaption></figure>
             <figure class="carousel-slide carousel-slide-pair">
               <div class="carousel-pair">
-                <img src="assets/images/grc-boston-poster.jpg" alt="Poster at Gordon Research Conference">
-                <img src="assets/images/poster-discussion-tony-cheetham.jpg" alt="Poster discussion with Prof. Anthony K. Cheetham">
+                <img src="assets/images/grc-boston-poster.jpg" alt="Poster at Gordon Research Conference" loading="eager">
+                <img src="assets/images/poster-discussion-tony-cheetham.jpg" alt="Poster discussion with Prof. Anthony K. Cheetham" loading="eager">
               </div>
               <figcaption>Poster presentations and scientific discussions at international meetings.</figcaption>
             </figure>
             <figure class="carousel-slide carousel-slide-pair">
               <div class="carousel-pair">
-                <img src="assets/images/first-meeting-prof-rao.jpg" alt="First meeting with Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS in 2019">
-                <img src="assets/images/rao-blessings-defense.jpg" alt="After PhD defense with Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS">
+                <img src="assets/images/first-meeting-prof-rao.jpg" alt="First meeting with Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS in 2019" loading="eager">
+                <img src="assets/images/rao-blessings-defense.jpg" alt="After PhD defense with Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS" loading="eager">
               </div>
               <figcaption>First interaction with <span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS, and blessings after the PhD defense.</figcaption>
             </figure>
             <figure class="carousel-slide carousel-slide-pair">
               <div class="carousel-pair">
-                <img src="assets/images/ms-degree-prof-rao.jpg" alt="Receiving the M.S. Engineering degree">
-                <img src="assets/images/phd-degree-prof-rao-2025.jpg" alt="Holding the PhD degree with Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS">
+                <img src="assets/images/ms-degree-prof-rao.jpg" alt="Receiving the M.S. Engineering degree" loading="eager">
+                <img src="assets/images/phd-degree-prof-rao-2025.jpg" alt="Holding the PhD degree with Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao, FRS" loading="eager">
               </div>
               <figcaption>M.S. Engineering and PhD degree milestones at JNCASR.</figcaption>
             </figure>
-            <figure class="carousel-slide"><img src="assets/images/uon-talk.jpg" alt="Research presentation at the University of Newcastle"><figcaption>Research presentation at the University of Newcastle, Australia, 2025.</figcaption></figure>
+            <figure class="carousel-slide"><img src="assets/images/uon-talk.jpg" alt="Research presentation at the University of Newcastle" loading="eager"><figcaption>Research presentation at the University of Newcastle, Australia, 2025.</figcaption></figure>
           </div>
           <div class="carousel-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
@@ -112,5 +135,7 @@
       <span><a href="contact.html">Contact</a></span>
     </div>
   </footer>
+  <script src="assets/site.js" defer></script>
+  <script src="assets/gallery.js" defer></script>
 </body>
 </html>

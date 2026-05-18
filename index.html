@@ -12,7 +12,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="home-document">
+  <div class="home-loader" data-home-loader aria-label="Periodic table to molybdenum intro">
+    <video class="home-loader-video" muted autoplay playsinline preload="auto" aria-hidden="true">
+      <source src="assets/media/home-periodic-table-mo-transition.mp4" type="video/mp4">
+    </video>
+    <button class="home-loader-skip" type="button" data-home-loader-skip>Skip</button>
+  </div>
+
   <header class="site-header">
     <div class="nav-wrap">
       <a class="brand" href="index.html">Dr. Devesh Chandra Binwal</a>
@@ -35,7 +42,7 @@
           <h1>Dr. Devesh Chandra Binwal</h1>
           <p class="identity">Experimental Materials Chemist | Halide Perovskites | Crystal Growth | Magnetism | TMDs/HER</p>
           <div class="hero-copy">
-            <p>I am a Research Associate at the Jawaharlal Nehru Centre for Advanced Scientific Research (JNCASR), Bengaluru, India. I completed my PhD in Materials Science in 2025 under the supervision of <span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS, and Dr. Pratap Vishnoi.</p>
+            <p>I am a Research Associate at the Jawaharlal Nehru Centre for Advanced Scientific Research (JNCASR), Bengaluru, India. I completed my PhD in Materials Science in 2025 under the supervision of <span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS, and <span class="nowrap-name">Dr. Pratap Vishnoi</span>.</p>
             <p>My research focuses on crystal growth, structure determination, and structure&ndash;property relationships in functional inorganic and hybrid materials, particularly halide perovskites, magnetic materials, and layered transition-metal dichalcogenides.</p>
           </div>
           <div class="hero-actions">
@@ -73,7 +80,7 @@
           </article>
           <article class="card snapshot-card accent">
             <h3>Layered materials and HER</h3>
-            <p>Transition-metal dichalcogenides and MoS<sub>2</sub>-based hydrogen-evolution systems.</p>
+            <p>Transition-metal dichalcogenides and <span class="formula">MoS<sub>2</sub>-based</span> hydrogen-evolution systems.</p>
           </article>
           <article class="card snapshot-card accent warm">
             <h3>Structure&ndash;property correlations</h3>
@@ -104,7 +111,7 @@
             <div class="education-detail">
               <h3>PhD in Materials Science</h3>
               <p>Jawaharlal Nehru Centre for Advanced Scientific Research (JNCASR), Bengaluru, India</p>
-              <p class="mentor-line">Supervisors: <span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS, and Dr. Pratap Vishnoi</p>
+              <p class="mentor-line">Supervisors: <span class="nowrap-name">Prof. C.&nbsp;N.&nbsp;R.&nbsp;Rao</span>, FRS, and <span class="nowrap-name">Dr. Pratap Vishnoi</span></p>
             </div>
           </article>
           <article class="card education-card">
@@ -140,5 +147,7 @@
       <span><a href="contact.html">Contact</a></span>
     </div>
   </footer>
+  <script src="assets/site.js" defer></script>
+  <script src="assets/home.js" defer></script>
 </body>
 </html>
