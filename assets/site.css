@@ -714,7 +714,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .publications-page .publication-logo-grid {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.72rem;
 }
 
@@ -843,6 +843,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 6px;
   background:
@@ -858,7 +859,8 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   width: 100%;
   height: 100%;
   min-height: 0;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center center;
   display: block;
   padding: 0;
 }
@@ -897,7 +899,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 .research-video-frame video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   background: #f5f8f8;
 }
@@ -907,15 +909,15 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .theme-1-media .theme-1-video {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
-  transform: none;
+  transform: scale(1.34);
 }
 
 .theme-3-media {
-  --research-video-aspect: 9 / 16;
-  justify-self: center;
-  width: min(100%, 390px);
+  --research-video-aspect: 16 / 9;
+  justify-self: stretch;
+  width: 100%;
 }
 
 .research-theme-video-media .theme-3-video {
@@ -925,7 +927,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .theme-3-media .theme-3-video {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   transform: none;
 }
@@ -1633,6 +1635,10 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   gap: 1rem;
 }
 
+.gallery-page .academic-visits-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .gallery-section-title {
   margin: 1.55rem 0 0.85rem;
   font-size: 1.35rem;
@@ -1724,6 +1730,24 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   cursor: pointer;
 }
 
+.scroll-indicator,
+.mouse-indicator,
+.scroll-cue,
+.hero-scroll,
+[data-scroll-indicator] {
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.scroll-indicator.is-hidden,
+.mouse-indicator.is-hidden,
+.scroll-cue.is-hidden,
+.hero-scroll.is-hidden,
+[data-scroll-indicator].is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .lightbox-open {
   overflow: hidden;
 }
@@ -1770,6 +1794,14 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   max-width: 100%;
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.contact-panel .email-line {
+  margin-block: 0.2rem;
+}
+
+.contact-panel .email-line + .email-line {
+  margin-top: 0.45rem;
 }
 
 .profile-list {
@@ -1986,6 +2018,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .portrait-card { max-width: 360px; }
   .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-page .academic-visits-grid { grid-template-columns: 1fr 1fr; }
   .research-card,
   .research-theme { grid-template-columns: 1fr; }
   .pub-body { grid-template-columns: 130px minmax(0, 1fr); }
@@ -2000,12 +2033,12 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .nav-links { width: 100%; flex-wrap: wrap; gap: 0.02rem 0.22rem; padding-bottom: 0.1rem; }
   .nav-links a { white-space: nowrap; padding: 0.36rem 0.28rem; font-size: 0.82rem; }
   .nav-links a::after { left: 0.35rem; right: 0.35rem; }
-  .home-document .nav-links {
+  .nav-links {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
   }
-  .home-document .nav-links a {
+  .nav-links a {
     min-width: 0;
     text-align: left;
   }
@@ -2044,6 +2077,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .home-training { padding: 1.45rem 0 2rem; }
   .snapshot-grid { grid-template-columns: 1fr; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr; }
+  .gallery-page .academic-visits-grid { grid-template-columns: 1fr; }
   .pub-card, .pub-body, .education-card, .logo-card { grid-template-columns: 1fr; }
   .pub-toc { max-width: 260px; }
   .publications-page .pub-toc {
@@ -2072,6 +2106,9 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .research-theme { padding: 1rem; }
   .dimensionality-animation { min-height: 250px; padding: 0.8rem; }
   .dimensionality-labels { grid-template-columns: 1fr; text-align: left; }
+  .research-theme-content h2 {
+    font-size: clamp(1.32rem, 8vw, 1.58rem);
+  }
   .research-theme-content > p:not(.meta) {
     text-align: left;
     hyphens: none;

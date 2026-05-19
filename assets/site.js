@@ -122,10 +122,25 @@
     });
   };
 
+  const setupScrollIndicator = () => {
+    const indicators = document.querySelectorAll(".scroll-indicator, .mouse-indicator, .scroll-cue, .hero-scroll, [data-scroll-indicator]");
+    if (!indicators.length) return;
+
+    const hideIndicators = () => {
+      if (window.scrollY < 64) return;
+      indicators.forEach((indicator) => indicator.classList.add("is-hidden"));
+      window.removeEventListener("scroll", hideIndicators);
+    };
+
+    hideIndicators();
+    window.addEventListener("scroll", hideIndicators, { passive: true });
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
     protectTerms();
     setupImages();
     setupReveal();
     setupVideos();
+    setupScrollIndicator();
   });
 })();

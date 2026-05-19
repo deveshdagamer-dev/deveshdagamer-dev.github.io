@@ -38,8 +38,11 @@
     <section class="section research-themes-section">
       <div class="container research-themes">
         <article class="card research-theme research-theme-alt">
-          <figure class="research-theme-media research-theme-contain-media">
-            <video class="research-theme-video theme-media-video theme-2-video" src="public/assets/videos/theme-2.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Single-crystal growth and structure-property relationship animation" disablepictureinpicture></video>
+          <figure class="research-theme-media research-video-frame theme-1-media">
+            <video class="research-theme-video theme-1-video" autoplay muted loop playsinline preload="metadata" aria-label="Single-crystal growth and structure-property relationship animation" disablepictureinpicture>
+              <source src="assets/media/crystal-video-theme-1.mp4" type="video/mp4">
+              <source src="public/assets/videos/theme-2.mp4" type="video/mp4">
+            </video>
           </figure>
           <div class="research-theme-content">
             <p class="meta">Theme 1</p>
@@ -64,8 +67,9 @@
         </article>
 
         <article class="card research-theme research-theme-warm">
-          <figure class="research-theme-media research-theme-video-media">
-            <video class="research-theme-video theme-video theme-3-video" autoplay loop muted playsinline preload="metadata" aria-label="Hydrogen evolution visual for transition-metal dichalcogenides">
+          <figure class="research-theme-media research-video-frame theme-3-media">
+            <video class="research-theme-video theme-3-video" autoplay muted loop playsinline preload="metadata" aria-label="Hydrogen evolution visual for transition-metal dichalcogenides">
+              <source src="assets/media/her-video-theme-3.mp4" type="video/mp4">
               <source src="public/assets/research/theme-3-tmd-her-final.mp4" type="video/mp4">
               <a href="public/assets/research/theme-3-tmd-her-final.mp4">View the transition-metal dichalcogenides hydrogen evolution video.</a>
             </video>
@@ -73,7 +77,7 @@
           <div class="research-theme-content">
             <p class="meta">Theme 3</p>
             <h2>Transition-metal dichalcogenides and hydrogen evolution</h2>
-            <p>My earlier research focused on transition-metal dichalcogenides and related low-dimensional materials for photocatalytic and electrocatalytic hydrogen evolution. I studied MoS<sub>2</sub>-, MoSe<sub>2</sub>-, WS<sub>2</sub>-, and Mo<sub>2</sub>C-based nanosheets and nanocomposites, including chalcogen-alloyed systems and polymer-functionalised carbon/borocarbonitride nanotube composites. This work showed that HER activity depends not only on phase and composition, but also on interface architecture and electronic connectivity between the catalytic material and conductive supports. It established my foundation in low-dimensional transition-metal chemistry before my focus shifted to halide perovskites.</p>
+            <p>My earlier research focused on transition-metal dichalcogenides and related low-dimensional materials for photocatalytic and electrocatalytic hydrogen evolution. I studied <span class="formula">MoS<sub>2</sub></span>, <span class="formula">MoSe<sub>2</sub></span>, <span class="formula">WS<sub>2</sub></span>, and <span class="formula">Mo<sub>2</sub>C</span> nanosheets and nanocomposites, including chalcogen-alloyed systems and polymer-functionalised carbon/borocarbonitride nanotube composites. This work showed that HER activity depends not only on phase and composition, but also on interface architecture and electronic connectivity between the catalytic material and conductive supports. It established my foundation in low-dimensional transition-metal chemistry before my focus shifted to halide perovskites.</p>
           </div>
         </article>
       </div>
@@ -86,5 +90,6 @@
       <span><a href="contact.html">Contact</a></span>
     </div>
   </footer>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
