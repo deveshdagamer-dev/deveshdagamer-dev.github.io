@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Devesh Chandra Binwal | Materials Scientist</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1a3a5c;
+      --teal:      #2e7d9f;
+      --teal-light:#e8f4f8;
+      --bg:        #f5f7fa;
+      --text:      #222222;
+      --muted:     #555e6d;
+      --card-bg:   #ffffff;
+      --border:    #d0dde8;
+      --sidebar-bg:#ffffff;
+      --gold:      #c9960c;
+      --radius:    10px;
+      --shadow:    0 2px 12px rgba(26,58,92,.09);
+      --shadow-h:  0 6px 24px rgba(26,58,92,.16);
+      --navbar-h:  60px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 3px; }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--navy); }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.15rem; }
+
+    /* ── Navbar ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--navbar-h);
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 0 1.5rem;
+      transition: height .25s, box-shadow .25s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
+    #navbar.shrunk { height: 50px; box-shadow: 0 3px 14px rgba(0,0,0,.22); }
+
+    #navbar a {
+      color: #e8f0f8;
+      font-size: .92rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      padding: .5rem 1.1rem;
+      border-radius: 4px;
+      transition: background .2s, color .2s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    #navbar a:hover,
+    #navbar a.active { background: rgba(255,255,255,.15); color: #fff; }
+    #navbar a:focus-visible { outline: 3px solid #7ec8e3; outline-offset: 2px; }
+
+    /* ── Page layout ── */
+    .page-wrapper {
+      display: flex;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: var(--navbar-h);
+      min-height: 100vh;
+    }
+
+    /* ── Left Sidebar ── */
+    #sidebar-left {
+      width: 22%;
+      min-width: 210px;
+      position: sticky;
+      top: var(--navbar-h);
+      height: calc(100vh - var(--navbar-h));
+      overflow-y: auto;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      padding: 2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      scrollbar-width: thin;
+    }
+
+    .profile-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .7rem;
+    }
+    .profile-photo {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--teal);
+      background: var(--teal-light);
+      display: none;
+    }
+    .profile-photo.loaded { display: block; }
+    .profile-photo-placeholder {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      border: 4px solid var(--teal);
+      background: var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--teal);
+    }
+    .sidebar-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .sidebar-title { font-size: .8rem; color: var(--muted); text-align: center; line-height: 1.4; }
+    .sidebar-inst  { font-size: .77rem; color: var(--teal); text-align: center; font-weight: 600; }
+
+    .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: .45rem; }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--teal-light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .28rem .65rem;
+      transition: background .2s, color .2s, border-color .2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .social-link:hover { background: var(--teal); color: #fff; border-color: var(--teal); text-decoration: none; }
+    .social-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    .cv-btn {
+      display: block;
+      text-align: center;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 6px;
+      padding: .55rem 1rem;
+      font-weight: 600;
+      font-size: .87rem;
+      letter-spacing: .02em;
+      transition: background .2s;
+      text-decoration: none;
+    }
+    .cv-btn:hover { background: var(--teal); color: #fff; text-decoration: none; }
+
+    .tag-cloud-title {
+      font-size: .73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: .4rem;
+    }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: .32rem; }
+    .tag {
+      font-size: .7rem;
+      background: var(--teal-light);
+      border: 1px solid var(--teal);
+      color: var(--navy);
+      border-radius: 20px;
+      padding: .18rem .55rem;
+      font-weight: 500;
+    }
+
+    /* ── Main Content ── */
+    #main-content {
+      width: 56%;
+      flex: 1;
+      min-width: 0;
+      position: relative;
+    }
+
+    /* ── Section panes ── */
+    .section-pane {
+      display: none;
+      padding: 2.5rem 2.5rem 3rem 2.5rem;
+      min-height: calc(100vh - var(--navbar-h));
+      animation: fadeIn .25s ease;
+    }
+    .section-pane.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--navy);
+      padding-bottom: .5rem;
+      border-bottom: 2.5px solid var(--teal);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Hero (inside About pane) ── */
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 1.3rem;
+      font-weight: 600;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-bottom: 2rem;
+    }
+    .stat-badge {
+      background: var(--teal-light);
+      border: 1.5px solid var(--teal);
+      color: var(--navy);
+      border-radius: 24px;
+      padding: .38rem .95rem;
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    /* ── Research cards ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+    }
+    .research-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.2rem 1.2rem 1.35rem;
+      border-left: 4px solid var(--teal);
+      box-shadow: var(--shadow);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .research-card:nth-child(2) { border-left-color: #7b5ea7; }
+    .research-card:nth-child(3) { border-left-color: #2e9f7d; }
+    .research-card:nth-child(4) { border-left-color: #9f4e2e; }
+    .research-card:hover { box-shadow: var(--shadow-h); transform: translateY(-2px); }
+    .research-card h3 { font-size: .98rem; color: var(--navy); margin-bottom: .4rem; }
+    .research-card p  { font-size: .86rem; color: var(--muted); margin-bottom: .45rem; }
+    .research-card .key-result { font-size: .82rem; color: var(--text); }
+    .research-card .key-result strong { color: var(--navy); }
+
+    /* ── Publications ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+    .pub-item {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      box-shadow: var(--shadow);
+      border-left: 3px solid var(--border);
+      transition: border-color .2s;
+    }
+    .pub-item:hover { border-left-color: var(--teal); }
+    .pub-num {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: .04em;
+      margin-bottom: .2rem;
+      text-transform: uppercase;
+    }
+    .pub-title { font-size: .94rem; color: var(--navy); font-weight: 600; margin-bottom: .28rem; line-height: 1.45; }
+    .pub-authors { font-size: .81rem; color: var(--muted); margin-bottom: .22rem; line-height: 1.5; }
+    .pub-authors .me { font-weight: 700; color: var(--navy); text-decoration: underline; text-decoration-color: var(--teal); }
+    .pub-journal { font-size: .84rem; color: var(--teal); font-style: italic; }
+    .pub-year { font-weight: 700; color: var(--text); }
+    .pub-doi { font-size: .76rem; color: var(--muted); }
+    .pub-doi a { color: var(--teal); }
+    .pub-badges { display: flex; flex-wrap: wrap; gap: .32rem; margin-top: .42rem; }
+    .badge {
+      font-size: .7rem;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: .16rem .55rem;
+      border: 1.5px solid;
+      white-space: nowrap;
+    }
+    .badge-hot    { background: #fff3e0; border-color: #e65100; color: #e65100; }
+    .badge-pick   { background: #fffde7; border-color: #f9a825; color: #856b00; }
+    .badge-review { background: #f3e5f5; border-color: #7b1fa2; color: #7b1fa2; }
+    .badge-first  { background: var(--teal-light); border-color: var(--teal); color: var(--navy); }
+
+    /* ── Awards Timeline ── */
+    .timeline { position: relative; padding-left: 2.2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: .65rem; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--border));
+      border-radius: 2px;
+    }
+    .timeline-item { position: relative; margin-bottom: 1.5rem; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.6rem;
+      top: .32rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 2.5px solid #fff;
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+    .timeline-item.highlight::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+    .timeline-year { font-size: .8rem; font-weight: 700; color: var(--teal); letter-spacing: .05em; margin-bottom: .08rem; }
+    .timeline-award { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); font-weight: 600; line-height: 1.35; }
+    .timeline-award .gold-star { color: var(--gold); }
+    .timeline-desc { font-size: .82rem; color: var(--muted); margin-top: .15rem; }
+
+    /* ── Gallery ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .gallery-item { display: flex; flex-direction: column; gap: .38rem; }
+    .gallery-box {
+      width: 100%;
+      aspect-ratio: 260 / 200;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .38rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-box img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .gallery-box img[src]:not([src=""]) { display: block; }
+    .gallery-box img[src]:not([src=""]) ~ .gallery-icon,
+    .gallery-box img[src]:not([src=""]) ~ .gallery-hint { display: none; }
+    .gallery-icon { font-size: 2rem; }
+    .gallery-hint { font-size: .68rem; color: var(--muted); }
+    .gallery-caption { font-size: .75rem; color: var(--muted); text-align: center; font-style: italic; line-height: 1.35; }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: .55rem; }
+    .contact-card p  { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+    .contact-email-btn {
+      display: inline-block;
+      margin-top: .75rem;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 24px;
+      padding: .5rem 1.3rem;
+      font-weight: 700;
+      font-size: .87rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .contact-email-btn:hover { background: var(--navy); color: #fff; text-decoration: none; }
+
+    /* ── Right Sidebar ── */
+    #sidebar-right {
+      width: 22%;
+      min-width: 195px;
+      position: sticky;
+      top: var(--navbar-h);
+      height: calc(100vh - var(--navbar-h));
+      overflow-y: auto;
+      background: var(--sidebar-bg);
+      border-left: 1px solid var(--border);
+      padding: 2rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      scrollbar-width: thin;
+    }
+    .right-sidebar-title {
+      font-size: .73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: .7rem;
+    }
+    .photo-placeholder-wrap { display: flex; flex-direction: column; gap: .38rem; }
+    .photo-placeholder {
+      width: 100%; height: 155px;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .28rem;
+      overflow: hidden;
+    }
+    .photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: none; }
+    .photo-placeholder img[src]:not([src=""]) { display: block; }
+    .photo-placeholder img[src]:not([src=""]) + .photo-placeholder-inner { display: none; }
+    .photo-placeholder-inner { display: flex; flex-direction: column; align-items: center; gap: .28rem; }
+    .photo-placeholder-icon { font-size: 1.7rem; }
+    .photo-placeholder-label { font-size: .66rem; color: var(--muted); text-align: center; padding: 0 .4rem; }
+    .photo-caption { font-size: .73rem; color: var(--muted); text-align: center; font-style: italic; line-height: 1.35; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.3rem 1rem;
+      font-size: .78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--sidebar-bg);
+    }
+
+    /* ── Scrollbar ── */
+    #sidebar-left::-webkit-scrollbar,
+    #sidebar-right::-webkit-scrollbar { width: 4px; }
+    #sidebar-left::-webkit-scrollbar-track,
+    #sidebar-right::-webkit-scrollbar-track { background: transparent; }
+    #sidebar-left::-webkit-scrollbar-thumb,
+    #sidebar-right::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      #sidebar-right { display: none; }
+      #main-content { width: 78%; }
+      #sidebar-left { width: 22%; }
+    }
+    @media (max-width: 768px) {
+      #navbar { justify-content: flex-start; overflow-x: auto; }
+      #navbar a { font-size: .76rem; padding: .4rem .65rem; white-space: nowrap; }
+
+      .page-wrapper { flex-direction: column; padding-top: var(--navbar-h); }
+
+      #sidebar-left {
+        width: 100%; min-width: unset;
+        position: static; height: auto; overflow: visible;
+        border-right: none; border-bottom: 1px solid var(--border);
+        padding: 1.4rem 1rem;
+        flex-direction: row; flex-wrap: wrap;
+        justify-content: center; gap: .9rem;
+      }
+      .profile-photo-wrap { flex-direction: row; align-items: center; flex-basis: 100%; gap: 1rem; }
+      .sidebar-name, .sidebar-title, .sidebar-inst { text-align: left; }
+      .profile-photo, .profile-photo-placeholder { width: 72px; height: 72px; }
+
+      #main-content { width: 100%; }
+      .section-pane { padding: 1.4rem 1rem 2rem 1rem; }
+
+      #sidebar-right {
+        display: flex; width: 100%; min-width: unset;
+        position: static; height: auto; overflow: visible;
+        border-left: none; border-top: 1px solid var(--border);
+        padding: 1.4rem 1rem;
+        flex-direction: row; flex-wrap: wrap; gap: 1rem;
+      }
+      .photo-placeholder-wrap { width: calc(33% - .5rem); }
+
+      .research-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .photo-placeholder-wrap { width: 100%; }
+      h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.4rem; }
+      .hero-tagline { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#" onclick="showSection('about');return false;" data-section="about" class="active">About</a>
+  <a href="#" onclick="showSection('research');return false;" data-section="research">Research</a>
+  <a href="#" onclick="showSection('publications');return false;" data-section="publications">Publications</a>
+  <a href="#" onclick="showSection('awards');return false;" data-section="awards">Awards</a>
+  <a href="#" onclick="showSection('gallery');return false;" data-section="gallery">Gallery</a>
+  <a href="#" onclick="showSection('contact');return false;" data-section="contact">Contact</a>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ══════ LEFT SIDEBAR ══════ -->
+  <aside id="sidebar-left" aria-label="Profile sidebar">
+
+    <div class="profile-photo-wrap">
+      <img class="profile-photo" src="" alt="Photo of Dr. Devesh Chandra Binwal" id="profile-img" />
+      <div class="profile-photo-placeholder" id="profile-placeholder" aria-hidden="true">⚛</div>
+      <div>
+        <p class="sidebar-name">Dr. Devesh Chandra Binwal</p>
+        <p class="sidebar-title">Research Associate<br/>New Chemistry Unit</p>
+        <p class="sidebar-inst">JNCASR, Bangalore, India</p>
+      </div>
+    </div>
+
+    <div class="social-links" aria-label="Academic profiles">
+      <a href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        Scholar
+      </a>
+      <a href="https://orcid.org/0000-0002-5418-8577" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.44 6.24c.48 0 .84.36.84.84 0 .48-.36.84-.84.84-.48 0-.84-.36-.84-.84 0-.48.36-.84.84-.84zm-.48 2.88h.96v8.4h-.96v-8.4zm3.12 0h2.64c2.52 0 3.84 1.68 3.84 4.2s-1.32 4.2-3.84 4.2h-2.64v-8.4zm.96.84v6.72h1.68c1.92 0 2.88-1.2 2.88-3.36s-.96-3.36-2.88-3.36h-1.68z"/></svg>
+        ORCID
+      </a>
+      <a href="https://www.researchgate.net/profile/Devesh-Chandra-Binwal" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82h-5.089v2.265h2.866c-.12.87-.4 1.176-.895 1.407-.35.167-.75.24-1.124.24-.41 0-.73-.07-1.015-.188-.608-.263-.943-.79-1.096-1.452a5.1 5.1 0 0 1-.065-.554 17.49 17.49 0 0 1-.034-.79v-.034a17.49 17.49 0 0 1 .034-.79 5.1 5.1 0 0 1 .065-.554c.153-.661.488-1.188 1.096-1.451.285-.12.605-.19 1.015-.19.507 0 .923.12 1.255.37.333.247.573.62.73 1.097l2.625-.595c-.345-1.073-.903-1.88-1.66-2.373C21.33.21 20.523 0 19.586 0zM0 0v10.39h4.264c.994 0 1.82-.156 2.48-.477.66-.32 1.148-.795 1.463-1.42.315-.627.473-1.38.473-2.28 0-.88-.159-1.628-.473-2.25C7.893.34 7.41-.134 6.743-.454 6.083-.773 5.258-.932 4.264-.932H0zm2.36 1.785h1.757c.654 0 1.178.075 1.56.232.385.157.68.422.885.795.205.373.307.887.307 1.545 0 .655-.102 1.168-.307 1.538-.204.37-.5.636-.885.797-.382.16-.906.242-1.56.242H2.36V1.785zm11.83 1.044c-.668 0-1.236.165-1.698.5a2.982 2.982 0 0 0-1.019 1.386c-.22.588-.333 1.26-.333 2.017 0 .753.113 1.43.333 2.02a2.98 2.98 0 0 0 1.02 1.385c.461.335 1.03.5 1.698.5.673 0 1.245-.165 1.71-.5a2.98 2.98 0 0 0 1.024-1.385c.22-.59.333-1.267.333-2.02 0-.756-.113-1.43-.333-2.017a2.98 2.98 0 0 0-1.025-1.386c-.464-.335-1.036-.5-1.71-.5zm0 1.786c.34 0 .623.095.851.286.228.191.4.47.514.84.114.37.17.82.17 1.35 0 .53-.056.978-.17 1.35a1.832 1.832 0 0 1-.514.845c-.228.19-.51.286-.85.286-.34 0-.623-.095-.852-.286a1.832 1.832 0 0 1-.514-.844c-.113-.372-.17-.82-.17-1.35 0-.532.057-.98.17-1.352.114-.37.287-.65.514-.84.23-.191.513-.285.852-.285z"/></svg>
+        ResearchGate
+      </a>
+      <a href="https://www.linkedin.com/in/devesh-binwal/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <a href="/uploads/CV_Dr_Devesh_Chandra_Binwal.pdf" class="cv-btn" download aria-label="Download CV (PDF)">
+      Download CV
+    </a>
+
+    <div>
+      <p class="tag-cloud-title">Research Interests</p>
+      <div class="tag-cloud">
+        <span class="tag">Halide Perovskites</span>
+        <span class="tag">Magnetic Materials</span>
+        <span class="tag">2D Materials</span>
+        <span class="tag">HER Catalysis</span>
+        <span class="tag">Single-Crystal XRD</span>
+        <span class="tag">Mo(III) Chemistry</span>
+        <span class="tag">MoS2 / MoSe2</span>
+        <span class="tag">Solid-State Synth.</span>
+        <span class="tag">Quantum Materials</span>
+        <span class="tag">Inorganic Chemistry</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ══════ MAIN CONTENT ══════ -->
+  <main id="main-content" aria-label="Main content">
+
+    <!-- ======== ABOUT ======== -->
+    <div id="pane-about" class="section-pane active" role="region" aria-labelledby="about-heading">
+
+      <p class="hero-tagline">
+        "Exploring the frontier of magnetic halide perovskites and 2D materials for energy and quantum applications."
+      </p>
+      <div class="hero-stats" role="list" aria-label="Key achievements">
+        <span class="stat-badge" role="listitem">5 First-Author Papers</span>
+        <span class="stat-badge" role="listitem">Chemical Science HOT Article</span>
+        <span class="stat-badge" role="listitem">3 International Conferences</span>
+      </div>
+
+      <h2 class="section-title" id="about-heading">About</h2>
+      <p>
+        I am a materials chemist specialising in the synthesis and characterisation of magnetic halide double perovskites and transition metal dichalcogenides, with a PhD from JNCASR, Bangalore, India, where I worked under the mentorship of world-leading researchers in solid-state chemistry. My research bridges fundamental magnetism and functional catalysis, combining single-crystal X-ray diffraction, magnetic measurements, and electrochemical methods to understand structure-property relationships in emerging inorganic materials. Open to postdoctoral opportunities in solid-state chemistry, magnetic materials, and functional inorganic materials.
+      </p>
+    </div>
+
+    <!-- ======== RESEARCH ======== -->
+    <div id="pane-research" class="section-pane" role="region" aria-labelledby="research-heading">
+      <h2 class="section-title" id="research-heading">Research Highlights</h2>
+      <div class="research-grid">
+
+        <article class="research-card" aria-label="Halide Double Perovskites">
+          <h3>Halide Double Perovskites</h3>
+          <p>Rational design of Mo(III)-based halide double perovskites with tunable magnetic exchange interactions, probing structure-property relationships via SCXRD, magnetic susceptibility, and diffuse reflectance spectroscopy.</p>
+          <p class="key-result"><strong>Key result:</strong> First Mo(III) B-site halide double perovskites with long-range magnetic ordering reported in Chemical Science.</p>
+        </article>
+
+        <article class="research-card" aria-label="Magnetic Exchange Interactions">
+          <h3>Magnetic Exchange Interactions</h3>
+          <p>Investigation of super-exchange and direct exchange pathways in 3D perovskite frameworks, combining DC/AC magnetometry with density functional theory to map spin Hamiltonians and critical temperatures.</p>
+          <p class="key-result"><strong>Key result:</strong> Established quantitative exchange parameters governing antiferromagnetic ground states in chloride and bromide halide systems.</p>
+        </article>
+
+        <article class="research-card" aria-label="Transition Metal Dichalcogenides for HER">
+          <h3>TMDs for Hydrogen Evolution</h3>
+          <p>Scalable synthesis of MoS2, MoSe2, WS2, and Mo2C electrocatalysts with controlled morphology and edge-site density, benchmarked against Pt/C standards in acidic media for the hydrogen evolution reaction.</p>
+          <p class="key-result"><strong>Key result:</strong> Achieved competitive overpotentials with engineered defect-rich nanostructures and nanocomposites with carbon and BN nanotubes.</p>
+        </article>
+
+        <article class="research-card" aria-label="Single-Crystal Growth and SCXRD">
+          <h3>Single-Crystal Growth &amp; SCXRD</h3>
+          <p>Expertise in Bridgman, chemical vapour transport, and flux methods for growing phase-pure single crystals of halide perovskites and layered chalcogenides; structure solution and refinement using SHELX/OLEX2.</p>
+          <p class="key-result"><strong>Key result:</strong> Solved and published multiple novel crystal structures determining unprecedented coordination environments for Mo(III).</p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ======== PUBLICATIONS ======== -->
+    <div id="pane-publications" class="section-pane" role="region" aria-labelledby="pub-heading">
+      <h2 class="section-title" id="pub-heading">Publications</h2>
+      <ol class="pub-list">
+
+        <!-- 1 -->
+        <li class="pub-item">
+          <p class="pub-num">Publication 1</p>
+          <p class="pub-title">Tailorable Magnetic Exchange and Optical Absorption in 1-D Double Perovskite-like Halides (CH<sub>3</sub>NH<sub>3</sub>)<sub>2</sub>NaMoCl<sub>(6-x)</sub>Br<sub>x</sub></p>
+          <p class="pub-authors">
+            <span class="me">Devesh Chandra Binwal</span>, Khyati Anand, Mayank Sharma, K. V. Saurav, Swapan K. Pati, Pratap Vishnoi
+          </p>
+          <p class="pub-journal"><em>Chemistry of Materials</em>, <span class="pub-year">2024</span>, <strong>36</strong>, 7719&ndash;7730</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1021/acs.chemmater.4c00735" target="_blank" rel="noopener">10.1021/acs.chemmater.4c00735</a></p>
+          <div class="pub-badges">
+            <span class="badge badge-first" aria-label="First author">First Author</span>
+          </div>
+        </li>
+
+        <!-- 2 -->
+        <li class="pub-item">
+          <p class="pub-num">Publication 2</p>
+          <p class="pub-title">Molybdenum Chloride Double Perovskites: Dimensionality Control of Optical and Magnetic Properties</p>
+          <p class="pub-authors">
+            <span class="me">Devesh Chandra Binwal</span>, Prashurya Pritam Mudoi, Debendra Prasad Panda, Pratap Vishnoi
+          </p>
+          <p class="pub-journal"><em>Chemical Science</em>, <span class="pub-year">2023</span>, <strong>14</strong>, 3982&ndash;3989</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1039/D3SC00132F" target="_blank" rel="noopener">10.1039/D3SC00132F</a></p>
+          <div class="pub-badges">
+            <span class="badge badge-hot" aria-label="HOT Article">🔥 HOT Article</span>
+            <span class="badge badge-pick" aria-label="Pick of the Week">⭐ Pick of the Week</span>
+            <span class="badge badge-first" aria-label="First author">First Author</span>
+          </div>
+        </li>
+
+        <!-- 3 -->
+        <li class="pub-item">
+          <p class="pub-num">Publication 3</p>
+          <p class="pub-title">Hybrid Layered Double Perovskite Halides of Transition Metals</p>
+          <p class="pub-authors">
+            Pratap Vishnoi, Julia L. Zuo, Xiaotong Li, <span class="me">Devesh Chandra Binwal</span>, Kira E. Wyckoff, Lingling Mao, Linus Kautzsch, Guang Wu, Stephen D. Wilson, Mercouri G. Kanatzidis, Ram Seshadri, Anthony K. Cheetham
+          </p>
+          <p class="pub-journal"><em>Journal of the American Chemical Society</em>, <span class="pub-year">2022</span>, <strong>144</strong>, 6661&ndash;6666</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1021/jacs.1c12760" target="_blank" rel="noopener">10.1021/jacs.1c12760</a></p>
+        </li>
+
+        <!-- 4 -->
+        <li class="pub-item">
+          <p class="pub-num">Publication 4</p>
+          <p class="pub-title">Nanocomposites of 1D MoS<sub>2</sub> with Polymer-Functionalized Nanotubes of Carbon and Borocarbonitride, and Their HER Activity</p>
+          <p class="pub-authors">
+            <span class="me">Devesh Chandra Binwal</span>, K. Pramoda, Alla Zak, Manjodh Kaur, Pallellappa Chithaiah, C. N. R. Rao
+          </p>
+          <p class="pub-journal"><em>ACS Applied Energy Materials</em>, <span class="pub-year">2021</span>, <strong>4</strong>, 2339&ndash;2347</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1021/acsaem.0c02874" target="_blank" rel="noopener">10.1021/acsaem.0c02874</a></p>
+          <div class="pub-badges">
+            <span class="badge badge-first" aria-label="First author">First Author</span>
+          </div>
+        </li>
+
+        <!-- 5 -->
+        <li class="pub-item">
+          <p class="pub-num">Publication 5</p>
+          <p class="pub-title">HER Activity of Nanosheets of 2D Solid Solutions of MoSe<sub>2</sub> with MoS<sub>2</sub> and MoTe<sub>2</sub></p>
+          <p class="pub-authors">
+            <span class="me">Devesh Chandra Binwal</span>, Manjodh Kaur, K. Pramoda, C. N. R. Rao
+          </p>
+          <p class="pub-journal"><em>Bulletin of Materials Science</em>, <span class="pub-year">2020</span>, <strong>43</strong>, 313</p>
+          <p class="pub-doi">DOI: <a href="https://doi.org/10.1007/s12034-020-02293-2" target="_blank" rel="noopener">10.1007/s12034-020-02293-2</a></p>
+          <div class="pub-badges">
+            <span class="badge badge-first" aria-label="First author">First Author</span>
+          </div>
+        </li>
+
+      </ol>
+
+      <p style="margin-top:1.2rem; font-size:.82rem; color:var(--muted); font-style:italic;">
+        For a complete and current list of publications, please visit
+        <a href="https://orcid.org/0000-0002-5418-8577" target="_blank" rel="noopener">ORCID</a>
+        or
+        <a href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+    </div>
+
+    <!-- ======== AWARDS ======== -->
+    <div id="pane-awards" class="section-pane" role="region" aria-labelledby="awards-heading">
+      <h2 class="section-title" id="awards-heading">Awards &amp; Fellowships</h2>
+      <div class="timeline">
+
+        <div class="timeline-item highlight" aria-label="Sheikh Saqr Junior Fellowship">
+          <p class="timeline-year">2022</p>
+          <p class="timeline-award"><span class="gold-star" aria-hidden="true">★</span> Sheikh Saqr Junior Fellowship</p>
+          <p class="timeline-desc">JNCASR, Bangalore, India.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">2018</p>
+          <p class="timeline-award">DST-INSPIRE Fellowship</p>
+          <p class="timeline-desc">Department of Science and Technology, Government of India.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">2024</p>
+          <p class="timeline-award">SERB International Travel Grant</p>
+          <p class="timeline-desc">Science and Engineering Research Board, Government of India. GRC Unconventional Semiconductors, USA.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">2018</p>
+          <p class="timeline-award">GATE (Graduate Aptitude Test in Engineering)</p>
+          <p class="timeline-desc">Qualified in Chemistry, Government of India.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">2023</p>
+          <p class="timeline-award">RAK CAM International Travel Grant</p>
+          <p class="timeline-desc">Ras Al Khaimah Centre for Advanced Materials. IWAM Conference, UAE.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">2025</p>
+          <p class="timeline-award">Visiting PhD Student, University of Newcastle, Australia</p>
+          <p class="timeline-desc">International research exchange; oral presentation on magnetic halide double perovskites.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ======== GALLERY ======== -->
+    <div id="pane-gallery" class="section-pane" role="region" aria-labelledby="gallery-heading">
+      <h2 class="section-title" id="gallery-heading">Gallery</h2>
+      <div class="gallery-grid">
+
+        <figure class="gallery-item">
+          <div class="gallery-box">
+            <img src="" alt="With Prof. C.N.R. Rao at JNCASR" />
+            <span class="gallery-icon" aria-hidden="true">📷</span>
+            <span class="gallery-hint">Drop photo here</span>
+          </div>
+          <figcaption class="gallery-caption">With Prof. C.N.R. Rao, JNCASR</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-box">
+            <img src="" alt="Poster Presentation at GRC Unconventional Semiconductors, USA 2024" />
+            <span class="gallery-icon" aria-hidden="true">📷</span>
+            <span class="gallery-hint">Drop photo here</span>
+          </div>
+          <figcaption class="gallery-caption">Poster Presentation, GRC USA 2024</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-box">
+            <img src="" alt="Oral Talk at University of Newcastle, Australia 2025" />
+            <span class="gallery-icon" aria-hidden="true">📷</span>
+            <span class="gallery-hint">Drop photo here</span>
+          </div>
+          <figcaption class="gallery-caption">Oral Talk, University of Newcastle 2025</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-box">
+            <img src="" alt="Group Photo at JNCASR-Rice University Workshop 2023" />
+            <span class="gallery-icon" aria-hidden="true">📷</span>
+            <span class="gallery-hint">Drop photo here</span>
+          </div>
+          <figcaption class="gallery-caption">Group Photo, JNCASR-Rice University Workshop 2023</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-box">
+            <img src="" alt="IWAM Poster Presentation, UAE 2023" />
+            <span class="gallery-icon" aria-hidden="true">📷</span>
+            <span class="gallery-hint">Drop photo here</span>
+          </div>
+          <figcaption class="gallery-caption">IWAM Poster, UAE 2023</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <div id="pane-contact" class="section-pane" role="region" aria-labelledby="contact-heading">
+      <h2 class="section-title" id="contact-heading">Contact</h2>
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Get in Touch</h3>
+          <p>I am actively seeking postdoctoral positions in solid-state chemistry, magnetic materials, and functional inorganic materials. Collaborations and enquiries are warmly welcome.</p>
+          <a href="mailto:deveshdagamer@gmail.com" class="contact-email-btn" aria-label="Send email to deveshdagamer@gmail.com">
+            deveshdagamer@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>Institutional Address</h3>
+          <p>
+            New Chemistry Unit<br/>
+            Jawaharlal Nehru Centre for Advanced Scientific Research (JNCASR)<br/>
+            Jakkur, Bangalore 560064<br/>
+            Karnataka, India
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ══════ RIGHT SIDEBAR ══════ -->
+  <aside id="sidebar-right" aria-label="Photo sidebar">
+    <p class="right-sidebar-title">Moments</p>
+
+    <div class="photo-placeholder-wrap">
+      <div class="photo-placeholder" role="img" aria-label="Conference presentation photo placeholder">
+        <img src="" alt="Dr. Binwal giving a conference presentation" />
+        <div class="photo-placeholder-inner">
+          <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+          <span class="photo-placeholder-label">Drop your photo here</span>
+        </div>
+      </div>
+      <p class="photo-caption">[Photo: Conference Presentation]</p>
+    </div>
+
+    <div class="photo-placeholder-wrap">
+      <div class="photo-placeholder" role="img" aria-label="Lab bench photo placeholder">
+        <img src="" alt="Dr. Binwal at the lab bench" />
+        <div class="photo-placeholder-inner">
+          <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+          <span class="photo-placeholder-label">Drop your photo here</span>
+        </div>
+      </div>
+      <p class="photo-caption">[Photo: Lab Bench]</p>
+    </div>
+
+    <div class="photo-placeholder-wrap">
+      <div class="photo-placeholder" role="img" aria-label="International visit photo placeholder">
+        <img src="" alt="Dr. Binwal during an international visit" />
+        <div class="photo-placeholder-inner">
+          <span class="photo-placeholder-icon" aria-hidden="true">📷</span>
+          <span class="photo-placeholder-label">Drop your photo here</span>
+        </div>
+      </div>
+      <p class="photo-caption">[Photo: International Visit]</p>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Dr. Devesh Chandra Binwal. All rights reserved.</p>
+</footer>
+
+<script>
+  /* ── Navbar shrink ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('shrunk', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── Single-section navigation ── */
+  function showSection(id) {
+    // Hide all panes
+    document.querySelectorAll('.section-pane').forEach(p => p.classList.remove('active'));
+    // Deactivate all nav links
+    document.querySelectorAll('#navbar a').forEach(a => a.classList.remove('active'));
+
+    // Show target pane
+    const pane = document.getElementById('pane-' + id);
+    if (pane) {
+      pane.classList.add('active');
+      // Scroll page to top of content
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // Activate nav link
+    const link = document.querySelector('#navbar a[data-section="' + id + '"]');
+    if (link) link.classList.add('active');
+  }
+
+  /* ── Profile photo fallback ── */
+  const profileImg = document.getElementById('profile-img');
+  const profilePH  = document.getElementById('profile-placeholder');
+  if (profileImg) {
+    profileImg.addEventListener('load', () => {
+      if (profileImg.naturalWidth > 0) {
+        profileImg.classList.add('loaded');
+        if (profilePH) profilePH.style.display = 'none';
+      }
+    });
+    profileImg.addEventListener('error', () => {
+      profileImg.classList.remove('loaded');
+      if (profilePH) profilePH.style.display = 'flex';
+    });
+  }
+</script>
+
+</body>
+</html>
