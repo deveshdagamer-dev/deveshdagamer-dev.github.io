@@ -39,7 +39,10 @@
 
   function playIntro() {
     window.clearTimeout(loadGuard);
-    var durationMs = Number.isFinite(video.duration) && video.duration > 0 ? video.duration * 1000 : 5000;
+    if (video) {
+        video.playbackRate = 2.0;
+    }
+    var durationMs = Number.isFinite(video.duration) && video.duration > 0 ? (video.duration / 2.0) * 1000 : 2500;
     completionGuard = window.setTimeout(finishIntro, durationMs + 650);
 
     var playPromise = video.play();

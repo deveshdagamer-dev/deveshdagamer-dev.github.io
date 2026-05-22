@@ -1,21 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
 :root {
-  --ink: #182330;
-  --muted: #596774;
-  --navy: #102f4a;
-  --navy-2: #173b58;
-  --navy-glass: rgba(16, 47, 74, 0.78);
-  --teal: #4f8f92;
-  --teal-strong: #2f7f82;
-  --teal-soft: #e9f2f1;
-  --gold: #b4884f;
-  --gold-soft: #f4eadc;
-  --line: #d9e1e5;
+  --ink: #2d3748;
+  --muted: #64748b;
+  --navy: #1a2744;
+  --navy-2: #1e3a5f;
+  --navy-glass: rgba(26, 39, 68, 0.78);
+  --teal: #0d9488;
+  --teal-strong: #0f766e;
+  --teal-soft: #f0fdfa;
+  --gold: #b8860b;
+  --gold-soft: #fef3c7;
+  --line: #e2e8f0;
   --panel: #ffffff;
-  --bg: #f5f7f7;
-  --paper: #fbfaf7;
-  --shadow: 0 18px 44px rgba(24, 35, 48, 0.12);
-  --shadow-soft: 0 10px 28px rgba(24, 35, 48, 0.07);
-  --radius: 8px;
+  --bg: #fafaf8;
+  --paper: #ffffff;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
 }
 
 * { box-sizing: border-box; }
@@ -27,11 +29,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--ink);
   background: var(--bg);
   font-size: 17px;
-  line-height: 1.7;
+  line-height: 1.75;
   overflow-x: clip;
   text-rendering: optimizeLegibility;
 }
@@ -207,7 +209,7 @@ a:hover { text-decoration: underline; }
 .hero h1,
 .page-title {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Playfair Display", Georgia, serif;
   letter-spacing: 0;
   line-height: 1.08;
   text-wrap: balance;
@@ -402,7 +404,7 @@ h2, h3 {
 
 h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(1.7rem, 2.5vw, 2.35rem);
 }
 
