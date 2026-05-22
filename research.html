@@ -37,51 +37,96 @@
     </section>
 
     <section class="section research-themes-section">
-      <div class="container research-themes">
-        <article class="card research-theme research-theme-alt">
-          <figure class="research-theme-media research-video-frame theme-1-media">
-            <video class="research-theme-video theme-1-video" controls preload="none" playsinline aria-label="Single-crystal growth and structure-property relationship animation" disablepictureinpicture>
-              <source src="assets/media/crystal-video-theme-1.mp4" type="video/mp4">
-              <source src="public/assets/videos/theme-2.mp4" type="video/mp4">
-            </video>
-          </figure>
-          <div class="research-theme-content">
-            <p class="meta">Theme 1</p>
-            <h2>Single-crystal growth and structure&ndash;property relationships</h2>
-            <p>Single-crystal growth and crystallographic analysis form the experimental foundation of my research. I grow single crystals of inorganic and hybrid halide materials and use single-crystal X-ray diffraction to determine their structures, symmetry, dimensionality, bond geometry, and local coordination environments. These structural details are then correlated with magnetic, optical, and thermal properties to understand how lattice connectivity and distortion control functional behaviour. This structure-first approach is central to my work on low-dimensional halide materials and magnetic perovskites.</p>
-          </div>
-        </article>
+      <div class="container">
+        <div class="grid three" style="align-items: start;">
+          <!-- Theme 1 -->
+          <article class="card research-theme-compact">
+            <figure class="research-theme-media" style="cursor: pointer;">
+              <video class="research-theme-video" autoplay muted loop playsinline onclick="toggleSound(this)" title="Click to toggle sound">
+                <source src="assets/media/crystal-video-theme-1.mp4" type="video/mp4">
+              </video>
+              <div style="text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Click video to toggle sound</div>
+            </figure>
+            <div class="research-theme-content">
+              <p class="meta">Theme 1</p>
+              <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Single-crystal growth and structure&ndash;property relationships</h2>
+              <button class="button secondary" style="width: 100%; padding: 0.5rem;" onclick="toggleThemeContent(0)">Read More</button>
+            </div>
+          </article>
 
-        <article class="card research-theme">
-          <figure class="research-theme-media research-theme-animation-media">
-            <video class="research-theme-video" controls preload="none" playsinline aria-label="Animated schematic of dimensional reduction in halide double perovskites">
-              <source src="public/assets/research/theme1-perovskite-transition.mp4" type="video/mp4">
-              <a href="public/assets/research/theme1-perovskite-transition.gif">View the halide perovskite dimensional reduction animation.</a>
-            </video>
-          </figure>
-          <div class="research-theme-content">
-            <p class="meta">Theme 2</p>
-            <h2>Magnetic halide double perovskites: dimensionality, composition, and exchange</h2>
-            <p>I synthesise lead-free magnetic halide double perovskites based on open-shell Mo(III) ions, spanning 3D corner-sharing frameworks, 2D Dion&ndash;Jacobson/Ruddlesden&ndash;Popper layered phases, and 1D face-sharing chain structures. By varying A-site cations and halide composition, I control framework connectivity, optical absorption, antiferromagnetic exchange, and structural phase transitions. Cl/Br alloying provides a quantitative route to tune both the optical band gap and magnetic ordering temperature, while layered phases offer a platform for studying spin&ndash;lattice coupling in low-dimensional halide lattices.</p>
-          </div>
-        </article>
+          <!-- Theme 2 -->
+          <article class="card research-theme-compact">
+            <figure class="research-theme-media" style="cursor: pointer;">
+              <video class="research-theme-video" autoplay muted loop playsinline onclick="toggleSound(this)" title="Click to toggle sound">
+                <source src="public/assets/research/theme1-perovskite-transition.mp4" type="video/mp4">
+              </video>
+              <div style="text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Click video to toggle sound</div>
+            </figure>
+            <div class="research-theme-content">
+              <p class="meta">Theme 2</p>
+              <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Magnetic halide double perovskites</h2>
+              <button class="button secondary" style="width: 100%; padding: 0.5rem;" onclick="toggleThemeContent(1)">Read More</button>
+            </div>
+          </article>
 
-        <article class="card research-theme research-theme-warm">
-          <figure class="research-theme-media research-video-frame theme-3-media">
-            <video class="research-theme-video theme-3-video" controls preload="none" playsinline aria-label="Hydrogen evolution visual for transition-metal dichalcogenides">
-              <source src="assets/media/her-video-theme-3.mp4" type="video/mp4">
-              <source src="public/assets/research/theme-3-tmd-her-final.mp4" type="video/mp4">
-              <a href="public/assets/research/theme-3-tmd-her-final.mp4">View the transition-metal dichalcogenides hydrogen evolution video.</a>
-            </video>
-          </figure>
-          <div class="research-theme-content">
-            <p class="meta">Theme 3</p>
-            <h2>Transition-metal dichalcogenides and hydrogen evolution</h2>
-            <p>My earlier research focused on transition-metal dichalcogenides and related low-dimensional materials for photocatalytic and electrocatalytic hydrogen evolution. I studied <span class="formula">MoS<sub>2</sub></span>, <span class="formula">MoSe<sub>2</sub></span>, <span class="formula">WS<sub>2</sub></span>, and <span class="formula">Mo<sub>2</sub>C</span> nanosheets and nanocomposites, including chalcogen-alloyed systems and polymer-functionalised carbon/borocarbonitride nanotube composites. This work showed that HER activity depends not only on phase and composition, but also on interface architecture and electronic connectivity between the catalytic material and conductive supports. It established my foundation in low-dimensional transition-metal chemistry before my focus shifted to halide perovskites.</p>
-          </div>
-        </article>
+          <!-- Theme 3 -->
+          <article class="card research-theme-compact">
+            <figure class="research-theme-media" style="cursor: pointer;">
+              <video class="research-theme-video" autoplay muted loop playsinline onclick="toggleSound(this)" title="Click to toggle sound">
+                <source src="assets/media/her-video-theme-3.mp4" type="video/mp4">
+              </video>
+              <div style="text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">Click video to toggle sound</div>
+            </figure>
+            <div class="research-theme-content">
+              <p class="meta">Theme 3</p>
+              <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Transition-metal dichalcogenides</h2>
+              <button class="button secondary" style="width: 100%; padding: 0.5rem;" onclick="toggleThemeContent(2)">Read More</button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 2rem;">
+        <div class="theme-full-text card" style="display: none; padding: 2rem;">
+          <h2 style="color: var(--navy);">Single-crystal growth and structure&ndash;property relationships</h2>
+          <p style="font-size: 1.1rem; line-height: 1.7; text-align: justify;">Single-crystal growth and crystallographic analysis form the experimental foundation of my research. I grow single crystals of inorganic and hybrid halide materials and use single-crystal X-ray diffraction to determine their structures, symmetry, dimensionality, bond geometry, and local coordination environments. These structural details are then correlated with magnetic, optical, and thermal properties to understand how lattice connectivity and distortion control functional behaviour. This structure-first approach is central to my work on low-dimensional halide materials and magnetic perovskites.</p>
+        </div>
+        <div class="theme-full-text card" style="display: none; padding: 2rem;">
+          <h2 style="color: var(--navy);">Magnetic halide double perovskites: dimensionality, composition, and exchange</h2>
+          <p style="font-size: 1.1rem; line-height: 1.7; text-align: justify;">I synthesise lead-free magnetic halide double perovskites based on open-shell Mo(III) ions, spanning 3D corner-sharing frameworks, 2D Dion&ndash;Jacobson/Ruddlesden&ndash;Popper layered phases, and 1D face-sharing chain structures. By varying A-site cations and halide composition, I control framework connectivity, optical absorption, antiferromagnetic exchange, and structural phase transitions. Cl/Br alloying provides a quantitative route to tune both the optical band gap and magnetic ordering temperature, while layered phases offer a platform for studying spin&ndash;lattice coupling in low-dimensional halide lattices.</p>
+        </div>
+        <div class="theme-full-text card" style="display: none; padding: 2rem;">
+          <h2 style="color: var(--navy);">Transition-metal dichalcogenides and hydrogen evolution</h2>
+          <p style="font-size: 1.1rem; line-height: 1.7; text-align: justify;">My earlier research focused on transition-metal dichalcogenides and related low-dimensional materials for photocatalytic and electrocatalytic hydrogen evolution. I studied <span class="formula">MoS<sub>2</sub></span>, <span class="formula">MoSe<sub>2</sub></span>, <span class="formula">WS<sub>2</sub></span>, and <span class="formula">Mo<sub>2</sub>C</span> nanosheets and nanocomposites, including chalcogen-alloyed systems and polymer-functionalised carbon/borocarbonitride nanotube composites. This work showed that HER activity depends not only on phase and composition, but also on interface architecture and electronic connectivity between the catalytic material and conductive supports. It established my foundation in low-dimensional transition-metal chemistry before my focus shifted to halide perovskites.</p>
+        </div>
       </div>
     </section>
+
+    <script>
+      function toggleSound(clickedVideo) {
+        const allVideos = document.querySelectorAll('.research-theme-video');
+        allVideos.forEach(v => {
+          if (v !== clickedVideo) {
+            v.muted = true;
+          }
+        });
+        clickedVideo.muted = !clickedVideo.muted;
+      }
+
+      function toggleThemeContent(index) {
+        const allContents = document.querySelectorAll('.theme-full-text');
+        allContents.forEach((c, i) => {
+          if (i === index) {
+            c.style.display = c.style.display === 'block' ? 'none' : 'block';
+            if (c.style.display === 'block') {
+              c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      }
+    </script>
   </main>
 
   <footer class="site-footer">
