@@ -8,7 +8,7 @@
   var finished = false;
   var loadGuard = window.setTimeout(function () {
     if (!video || video.readyState === 0) finishIntro();
-  }, 7000);
+  }, 500);
   var completionGuard = null;
 
   function finishIntro() {
