@@ -62,11 +62,11 @@
           <!-- Replace this with your Formspree/Getform endpoint. -->
           <form class="contact-form" action="mailto:deveshchandrabinwal@gmail.com" method="post" enctype="text/plain">
             <label for="name">Name</label>
-            <input id="name" name="Name" type="text" autocomplete="name" required>
+            <input id="name" name="Name" type="text" autocomplete="name" maxlength="120" required>
             <label for="email">Email address</label>
-            <input id="email" name="Email" type="email" autocomplete="email" required>
+            <input id="email" name="Email" type="email" autocomplete="email" maxlength="254" required>
             <label for="message">Message</label>
-            <textarea id="message" name="Message" rows="3" required></textarea>
+            <textarea id="message" name="Message" rows="3" maxlength="2000" required></textarea>
             <button class="button" type="submit"><img class="link-icon-img" src="assets/icons/email.png" alt="" aria-hidden="true">Send enquiry</button>
           </form>
         </article>
