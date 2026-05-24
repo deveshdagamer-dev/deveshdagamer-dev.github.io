@@ -23,7 +23,7 @@ This repository deploys through the included GitHub Actions workflow:
 
 - `.github/workflows/deploy.yml`
 
-The workflow publishes the root HTML files, `assets/site.css`, images, icons, documents, `.nojekyll`, and `CNAME`. The public website is `https://www.deveshbinwal.com`.
+The workflow publishes the root HTML files, `assets/site.css`, images, icons, documents, `.nojekyll`, and `CNAME`. The public website is `https://deveshbinwal.com`.
 
 ## Updating Content
 
