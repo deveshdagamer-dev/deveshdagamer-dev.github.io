@@ -1,0 +1,15 @@
+# Static hosting headers for Cloudflare Pages, Netlify, and similar hosts.
+# GitHub Pages may not apply this file directly. Treat this as a ready-to-use
+# policy for a future CDN/static host, and keep equivalent headers in the active
+# hosting layer when one is added.
+# A strict Content-Security-Policy is intentionally not enforced here yet. OWASP
+# recommends CSP as browser-side defense-in-depth, but it must be tested in
+# report-only mode first so current videos, gallery behavior, inline JSON-LD,
+# GoatCounter analytics, fonts, images, and public profile links do not break.
+# Cloudflare-ready future plan: add WAF/bot protection/rate limiting at the edge,
+# then test and enforce a CSP after confirming the live site still renders.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: SAMEORIGIN
