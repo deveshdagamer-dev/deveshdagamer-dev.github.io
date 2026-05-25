@@ -38,10 +38,10 @@ sections:
             </p>
             <h3>Profiles</h3>
             <p>
-              <a href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" target="_blank">Google Scholar</a><br>
-              <a href="https://orcid.org/0000-0002-5418-8577" target="_blank">ORCID: 0000-0002-5418-8577</a><br>
-              <a href="https://www.researchgate.net/profile/Devesh-Chandra-Binwal" target="_blank">ResearchGate</a><br>
-              <a href="https://www.linkedin.com/in/devesh-binwal/" target="_blank">LinkedIn</a>
+              <a href="https://scholar.google.com/citations?hl=en&user=TiL00-UAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a><br>
+              <a href="https://orcid.org/0000-0002-5418-8577" target="_blank" rel="noopener noreferrer">ORCID: 0000-0002-5418-8577</a><br>
+              <a href="https://www.researchgate.net/profile/Devesh-Chandra-Binwal" target="_blank" rel="noopener noreferrer">ResearchGate</a><br>
+              <a href="https://www.linkedin.com/in/devesh-binwal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </p>
           </div>
         </div>

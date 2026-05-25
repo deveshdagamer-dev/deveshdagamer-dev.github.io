@@ -2,6 +2,18 @@
 
 This repository contains the public static portfolio website for `deveshbinwal.com`.
 
+## Reporting A Vulnerability
+
+Please report suspected vulnerabilities by email to `deveshchandrabinwal@gmail.com`.
+Include the affected URL or file path, a short description, and safe reproduction
+steps. Do not include real secrets in the report body, screenshots, issues, or
+pull requests.
+
+This is a static public academic portfolio. It currently has no login, user
+accounts, payments, private user dashboard, API, or database, so authentication,
+authorization, session, password-reset, and IDOR controls are not part of the
+production surface unless those features are intentionally added later.
+
 ## API Keys And Secrets
 
 API keys, tokens, private keys, webhook URLs, passwords, service credentials, and other secrets must never be committed to this repository or placed in browser-visible code. That includes HTML, CSS, JavaScript, JSON, YAML, generated assets, public build output, and GitHub Pages files.
