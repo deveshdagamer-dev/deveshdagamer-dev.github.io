@@ -44,6 +44,8 @@ jobs:
             mkdir -p _site/public
             cp -R public/assets _site/public/assets
           fi
+          mkdir -p _site/.well-known
+          cp .well-known/security.txt _site/.well-known/security.txt
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
