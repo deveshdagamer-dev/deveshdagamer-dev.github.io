@@ -32,9 +32,6 @@ sections:
         [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-5418-8577)
         [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=flat&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Devesh-Chandra-Binwal)
         [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devesh-binwal/)
-      button:
-        text: Download CV
-        url: uploads/CV_Dr_Devesh_Chandra_Binwal.pdf
       headings:
         about: ''
         education: ''

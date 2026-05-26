@@ -586,6 +586,11 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   border-left: 4px solid rgba(79, 143, 146, 0.58);
 }
 
+.home-training .education-card.institution-card {
+  grid-template-columns: 150px 128px minmax(0, 1fr);
+  align-items: center;
+}
+
 .home-training .education-card:nth-child(even) {
   border-left-color: rgba(180, 136, 79, 0.58);
 }
@@ -604,11 +609,40 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 
 .education-detail .mentor-line {
   margin-top: 0.22rem;
-  color: var(--muted);
+  color: var(--ink);
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 0.92rem;
-  font-weight: 650;
+  font-size: 1rem;
+  font-weight: 400;
   text-align: left;
+}
+
+.education-detail .mentor-line strong {
+  font-weight: 750;
+}
+
+.institution-logos,
+.highlight-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  align-content: center;
+}
+
+.institution-logo,
+.highlight-logo {
+  width: auto;
+  max-width: 58px;
+  height: 52px;
+  object-fit: contain;
+  padding: 0.35rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.institution-logos .institution-logo:only-child {
+  max-width: 86px;
 }
 
 .page-hero {
@@ -823,7 +857,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 
 .research-theme {
   display: grid;
-  grid-template-columns: minmax(340px, 0.46fr) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 0.38fr) minmax(0, 1fr);
   gap: clamp(1rem, 2vw, 1.45rem);
   align-items: center;
   padding: clamp(1rem, 1.8vw, 1.25rem);
@@ -1088,7 +1122,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
 }
 
 .research-theme-content {
-  max-width: 780px;
+  max-width: none;
   align-self: center;
   min-width: 0;
 }
@@ -1103,9 +1137,11 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   color: var(--ink);
   line-height: 1.72;
   text-align: justify;
+  text-align-last: left;
   text-justify: inter-word;
-  hyphens: auto;
-  text-wrap: pretty;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .meta {
@@ -1393,6 +1429,10 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   align-items: start;
 }
 
+.logo-card.logo-card-multi {
+  grid-template-columns: 78px minmax(0, 1fr);
+}
+
 .highlight-grid .card,
 .grid.two .card {
   min-height: 100%;
@@ -1416,6 +1456,17 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 6px;
+}
+
+.highlight-logos {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 78px;
+}
+
+.highlight-logo {
+  max-width: 78px;
+  height: 42px;
 }
 
 .skill-feature {
@@ -2081,6 +2132,14 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr; }
   .gallery-page .academic-visits-grid { grid-template-columns: 1fr; }
   .pub-card, .pub-body, .education-card, .logo-card { grid-template-columns: 1fr; }
+  .home-training .education-card.institution-card,
+  .logo-card.logo-card-multi {
+    grid-template-columns: 1fr;
+  }
+  .institution-logos,
+  .highlight-logos {
+    max-width: none;
+  }
   .pub-toc { max-width: 260px; }
   .publications-page .pub-toc {
     width: 100%;
