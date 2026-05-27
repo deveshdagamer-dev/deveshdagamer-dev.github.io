@@ -32,6 +32,7 @@ jobs:
           mkdir -p _site
           cp index.html research.html publications.html highlights.html gallery.html news.html contact.html awards.html _site/
           cp .nojekyll CNAME sitemap.xml robots.txt favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png android-chrome-192x192.png _site/
+          cp static/social-preview.png _site/social-preview.png
           mkdir -p _site/assets
           cp assets/site.css _site/assets/site.css
           cp assets/site.js assets/home.js assets/gallery.js _site/assets/
