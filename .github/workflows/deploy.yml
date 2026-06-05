@@ -40,10 +40,6 @@ jobs:
           cp -R assets/images _site/assets/images
           cp -R assets/docs _site/assets/docs
           cp -R assets/icons _site/assets/icons
-          if [ -d assets/videos ]; then
-            mkdir -p _site/assets/videos
-            cp -R assets/videos/* _site/assets/videos/
-          fi
           mkdir -p _site/assets/media
           cp assets/media/home-periodic-table-mo-transition.mp4 _site/assets/media/
           if [ -d public/assets ]; then

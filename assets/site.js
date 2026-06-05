@@ -85,65 +85,8 @@
     targets.forEach((target) => observer.observe(target));
   };
 
-  const setupFeatureVideos = () => {
-    const videos = Array.from(document.querySelectorAll("video[data-feature-video]"));
-    if (!videos.length) return;
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const activateVideo = (video) => {
-      if (!video.dataset.src || video.src) return;
-      video.src = video.dataset.src;
-      video.load();
-    };
-
-    videos.forEach((video) => {
-      const panel = video.closest(".indianscientist-card-video-card");
-      const soundToggle = panel ? panel.querySelector("[data-sound-toggle]") : null;
-
-      video.addEventListener("error", () => {
-        if (panel) panel.classList.add("video-failed");
-      });
-
-      if (soundToggle) {
-        soundToggle.addEventListener("click", () => {
-          activateVideo(video);
-          video.muted = !video.muted;
-          soundToggle.classList.toggle("is-on", !video.muted);
-          soundToggle.setAttribute("aria-label", video.muted ? "Turn video sound on" : "Turn video sound off");
-          soundToggle.querySelector("span").textContent = video.muted ? "Sound on" : "Sound off";
-          video.play().catch(() => {});
-        });
-      }
-    });
-
-    if (prefersReducedMotion) return;
-
-    if (!("IntersectionObserver" in window)) {
-      videos.forEach((video) => {
-        activateVideo(video);
-        video.play().catch(() => {});
-      });
-      return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          activateVideo(video);
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, { rootMargin: "220px 0px", threshold: 0.28 });
-
-    videos.forEach((video) => observer.observe(video));
-  };
-
   const setupVideos = () => {
-    const videos = Array.from(document.querySelectorAll("video:not([data-feature-video])"));
+    const videos = Array.from(document.querySelectorAll("video"));
     if (!videos.length) return;
 
     videos.forEach((video) => {
@@ -197,7 +140,6 @@
     protectTerms();
     setupImages();
     setupReveal();
-    setupFeatureVideos();
     setupVideos();
     setupScrollIndicator();
   });
