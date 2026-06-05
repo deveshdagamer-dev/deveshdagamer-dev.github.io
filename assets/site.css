@@ -560,6 +560,133 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   font-size: 0.98rem;
 }
 
+.indianscientist-card-feature {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(13, 148, 136, 0.12), transparent 28rem),
+    linear-gradient(180deg, #fafaf8 0%, #f7fbfb 100%);
+}
+
+.indianscientist-card-feature .container {
+  padding-top: 2.75rem;
+  padding-bottom: 2.95rem;
+}
+
+.indianscientist-card-feature-head {
+  align-items: end;
+}
+
+.indianscientist-card-feature-head p {
+  max-width: 760px;
+}
+
+.indianscientist-card-feature-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(1.1rem, 2.4vw, 2rem);
+  align-items: center;
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 46px rgba(26, 39, 68, 0.1);
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.indianscientist-card-video-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  background: #0f2539;
+  box-shadow: 0 18px 42px rgba(26, 39, 68, 0.16);
+}
+
+.indianscientist-card-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #0f2539;
+}
+
+.indianscientist-sound-toggle {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  min-height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(15, 37, 57, 0.72);
+  color: #fff;
+  cursor: pointer;
+  font: 800 0.78rem/1 "Segoe UI", Arial, sans-serif;
+  padding: 0.45rem 0.72rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.indianscientist-sound-toggle:hover,
+.indianscientist-sound-toggle:focus-visible {
+  background: rgba(15, 37, 57, 0.9);
+  border-color: rgba(255, 255, 255, 0.54);
+  transform: translateY(-1px);
+}
+
+.indianscientist-sound-toggle.is-on {
+  background: rgba(13, 148, 136, 0.88);
+}
+
+.indianscientist-card-feature-copy {
+  min-width: 0;
+}
+
+.indianscientist-card-feature-copy h3 {
+  margin-top: 0.2rem;
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+}
+
+.indianscientist-card-feature-copy p {
+  color: var(--muted);
+  margin: 0.7rem 0 0;
+}
+
+.indianscientist-feature-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.indianscientist-feature-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: #405166;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.indianscientist-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--gold));
+  transform: translateY(-50%);
+}
+
+.indianscientist-card-caption {
+  border-left: 3px solid rgba(13, 148, 136, 0.55);
+  background: rgba(240, 253, 250, 0.72);
+  border-radius: 0 10px 10px 0;
+  color: #46586c !important;
+  font-size: 0.92rem;
+  font-weight: 650;
+  padding: 0.72rem 0.85rem;
+}
+
 .snapshot-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2079,6 +2206,7 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
   .nav-links { justify-content: flex-start; }
   .hero .container { grid-template-columns: 1fr; }
   .home-snapshot .section-head { grid-template-columns: 1fr; }
+  .indianscientist-card-feature-panel { grid-template-columns: 1fr; }
   .portrait-card { max-width: 360px; }
   .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr 1fr; }
@@ -2138,6 +2266,21 @@ h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
     min-width: 0;
   }
   .home-snapshot { padding: 1.5rem 0 1.3rem; }
+  .indianscientist-card-feature .container {
+    padding-top: 2rem;
+    padding-bottom: 2.15rem;
+  }
+  .indianscientist-card-feature-panel {
+    border-radius: 14px;
+    padding: 0.85rem;
+  }
+  .indianscientist-card-video-card {
+    border-radius: 12px;
+  }
+  .indianscientist-sound-toggle {
+    right: 0.55rem;
+    bottom: 0.55rem;
+  }
   .home-training { padding: 1.45rem 0 2rem; }
   .snapshot-grid { grid-template-columns: 1fr; }
   .grid.two, .grid.three, .grid.four, .gallery-grid, .highlight-grid { grid-template-columns: 1fr; }
