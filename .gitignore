@@ -76,6 +76,8 @@ cache/
 
 # Generated website audit reports
 reports/latest-website-audit.md
+reports/latest-website-audit.json
+reports/war-room-audit-state.json
 !reports/.gitkeep
 
 # ============================================================================

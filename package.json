@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "hugo server --disableFastRender",
     "build": "hugo --minify && pnpm run pagefind",
-    "pagefind": "pagefind --site public"
+    "pagefind": "pagefind --site public",
+    "audit:war-room": "node tools/audit/run-daily-audit.mjs",
+    "validate:static-security": "node tools/security/validate-static-security.mjs"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",
