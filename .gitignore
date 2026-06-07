@@ -68,6 +68,7 @@ static/pagefind/
 # Cache files
 .cache/
 cache/
+.pnpm-store/
 .parcel-cache/
 .turbo/
 .vite/

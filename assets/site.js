@@ -2,6 +2,8 @@
   document.documentElement.classList.add("js-ready");
 
   const protectedTerms = [
+    "Bharat Ratna Prof. C. N. R. Rao, FRS",
+    "Bharat Ratna Prof. C.\u00a0N.\u00a0R.\u00a0Rao, FRS",
     "Prof. C. N. R. Rao",
     "Prof. C.\u00a0N.\u00a0R.\u00a0Rao",
     "C. N. R. Rao",

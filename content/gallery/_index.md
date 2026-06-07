@@ -42,8 +42,8 @@ sections:
         </style>
         <div class="gallery-grid">
           <figure>
-            <img src="/uploads/gallery-1.jpg" alt="With Prof. C.N.R. Rao, JNCASR">
-            <figcaption>With Prof. C.N.R. Rao, JNCASR</figcaption>
+            <img src="/uploads/gallery-1.jpg" alt="With Bharat Ratna Prof. C. N. R. Rao, FRS, JNCASR">
+            <figcaption>With Bharat Ratna Prof. C. N. R. Rao, FRS, JNCASR</figcaption>
           </figure>
           <figure>
             <img src="/uploads/gallery-2.jpg" alt="Poster Presentation, GRC USA 2024">
